@@ -95,6 +95,38 @@
   transition: all 0.5s ease-out;
   transition-delay: 0.4s; }
 
+@media screen and (min-width: 568px) and (max-width: 768px) {
+  main#home {
+    align-items: center;
+    text-align: center; }
+  .menu {
+    flex-direction: column; }
+    .menu-branding, .menu-nav-list {
+      width: 100%; }
+    .menu-branding {
+      height: 25vh;
+      transform: translate3d(-100%, 0, 0); }
+      .menu-branding .portrait {
+        width: 120px;
+        height: 120px; }
+      .menu-branding.show {
+        transform: translate3d(0, 0, 0); }
+    .menu-nav-list {
+      height: 75vh;
+      transform: translate3d(100%, 0, 0); }
+      .menu-nav-list .nav-item .nav-link {
+        font-size: 24px; }
+      .menu-nav-list.show {
+        transform: translate3d(0, 0, 0); } }
+
+@media screen and (max-width: 567px) {
+  main#home {
+    align-items: center;
+    text-align: center; }
+    main#home h1.lg-heading {
+      font-size: 4rem;
+      margin-top: 10vh; } }
+
 * {
   box-sizing: border-box; }
 
