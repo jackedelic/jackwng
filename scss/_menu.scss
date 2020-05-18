@@ -37,3 +37,82 @@
     }
   }
 }
+
+// The navigation panel (portrait and nav links)
+.menu {
+  display: flex;
+
+  position: fixed;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+  &-branding, // left (portrait)
+  &-nav-list {
+    // right (nav links)
+    @include easeOut();
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 50%;
+    height: 100vh;
+  }
+  &-nav-list {
+    // right (nav links)
+    margin: 0;
+    padding: 0;
+    background-color: darken($primary-color, 1);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+    .nav-item {
+      transform: translate3d(50vw, 0, 0);
+      .nav-link:hover {
+        color: $secondary-color;
+      }
+      .nav-link {
+        @include easeOut();
+        display: inline-block;
+        position: relative;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 300;
+        font-size: 30px;
+        &.current {
+          color: $secondary-color;
+        }
+      }
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+  &-branding {
+    // left (portrait)
+    background-color: lighten($primary-color, 0.1);
+    transform: translate3d(0, 100%, 0);
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+    .portrait {
+      width: 250px;
+      height: 250px;
+      background: url(../img/portrait.jpg);
+      border-radius: 50%;
+      border: solid 3px $secondary-color;
+    }
+  }
+  &.show {
+    visibility: visible;
+  }
+}
+
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    @include easeOut();
+    transition-delay: $x * 0.1s;
+  }
+}

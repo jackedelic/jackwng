@@ -4,9 +4,14 @@ const menuBranding = document.querySelector(".menu-branding");
 const menuNavList = document.querySelector(".menu-nav-list");
 const navItems = document.querySelectorAll(".nav-item");
 
+const navLinks = document.querySelectorAll(".nav-link");
+
 var showMenu = false;
 
 menuBtn.addEventListener("click", toggleMenu);
+navLinks.forEach((navLink) => {
+  navLink.addEventListener("click", toggleCurrent);
+});
 
 function toggleMenu() {
   if (!showMenu) {
@@ -28,4 +33,13 @@ function toggleMenu() {
     });
     showMenu = false;
   }
+}
+
+// Add the current class for nav links which are clicked.
+// Remove the current class from the rest of nav links.
+function toggleCurrent(ev) {
+  navLinks.forEach((navLink) => {
+    navLink.classList.remove("current");
+  });
+  ev.target.classList.add("current");
 }
