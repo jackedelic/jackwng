@@ -140,6 +140,31 @@ header {
   color: #333;
 }
 
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+  align-items: center;
+
+  .contact-item {
+    font-size: 2rem;
+    border: 3px solid white;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    &:hover {
+      @include easeOut();
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+      padding: 0.5rem 1.5rem;
+      border-color: $secondary-color;
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
 #main-footer {
   height: 60px;
   text-align: center;
