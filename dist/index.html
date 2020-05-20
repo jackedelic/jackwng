@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>Home</title>
   </head>
-  <body id="bg-img">
+  <body class="bg-home">
     <header>
       <div class="menu-btn">
         <div class="btn-line"></div>
@@ -17,11 +17,15 @@
 
       <nav class="menu">
         <div class="menu-branding">
-          <div class="portrait"></div>
+          <div class="portrait">
+            <div id="loader-wrapper">
+              <div id="loader"></div>
+            </div>
+          </div>
         </div>
         <ul class="menu-nav-list">
           <li class="nav-item">
-            <a href="index.html" class="nav-link">
+            <a href="index.html" class="nav-link current">
               Home
             </a>
           </li>
@@ -47,7 +51,12 @@
     <main id="home">
       <h1 class="lg-heading">Jack <span class="text-secondary">Wong</span></h1>
       <h2 class="sm-heading">
-        Programmer, Web developer, Entrepreneur
+        <a
+          href=""
+          class="rotate-typewriter"
+          data-period="1000"
+          data-type='[ "I code.&nbsp;", "I develop web applications.&nbsp;", "I design.&nbsp;", "I solve problems.&nbsp;" ]'
+        ></a>
       </h2>
       <div class="icons">
         <a href="#!"><i class="fab fa-facebook-square fa-2x"></i></a>
@@ -57,5 +66,7 @@
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/onload.js"></script>
   </body>
 </html>

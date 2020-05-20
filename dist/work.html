@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>Work</title>
   </head>
-  <body>
+  <body class="bg-work">
     <header>
       <div class="menu-btn">
         <div class="btn-line"></div>
@@ -17,7 +17,11 @@
 
       <nav class="menu">
         <div class="menu-branding">
-          <div class="portrait"></div>
+          <div class="portrait">
+            <div id="loader-wrapper">
+              <div id="loader"></div>
+            </div>
+          </div>
         </div>
         <ul class="menu-nav-list">
           <li class="nav-item">
@@ -44,11 +48,16 @@
       </nav>
     </header>
 
-    <main id="about">
+    <main id="work">
+      <figure>
+        <img src="" alt="" class="" />
+      </figure>
       <h1 class="lg-heading">My <span class="text-secondary">Work</span></h1>
-      <h2 class="sm-heading">
-        Check out some of my projects...
-      </h2>
+      <h2
+        class="sm-heading typewriter"
+        data-period="1000"
+        data-type='[ "Check out some of my projects.&nbsp;"]'
+      ></h2>
       <div class="projects">
         <div class="item">
           <a href="#!">
@@ -106,6 +115,8 @@
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/onload.js"></script>
   </body>
   <footer id="main-footer">
     Copyright &copy; 2020

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>Contact Me</title>
   </head>
-  <body>
+  <body class="bg-contact">
     <header>
       <div class="menu-btn">
         <div class="btn-line"></div>
@@ -17,7 +17,11 @@
 
       <nav class="menu">
         <div class="menu-branding">
-          <div class="portrait"></div>
+          <div class="portrait">
+            <div id="loader-wrapper">
+              <div id="loader"></div>
+            </div>
+          </div>
         </div>
         <ul class="menu-nav-list">
           <li class="nav-item">
@@ -44,12 +48,14 @@
       </nav>
     </header>
 
-    <main id="about">
+    <main>
       <h1 class="lg-heading">Contact <span class="text-secondary">Me</span></h1>
-      <h2 class="sm-heading">
-        Ways you can reach me
-      </h2>
-      <div class="boxes">
+      <h2
+        class="sm-heading typewriter"
+        data-period="1000"
+        data-type='[ "Some ways you can reach me...&nbsp;"]'
+      ></h2>
+      <div class="contact-boxes">
         <div class="contact-item">
           <span class="text-secondary">Email: </span>
           jackwong3101@yahoo.com
@@ -70,6 +76,8 @@
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/onload.js"></script>
   </body>
   <footer id="main-footer">
     Copyright &copy; 2020

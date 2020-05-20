@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>About</title>
   </head>
-  <body>
+  <body class="bg-about">
     <header>
       <div class="menu-btn">
         <div class="btn-line"></div>
@@ -17,7 +17,11 @@
 
       <nav class="menu">
         <div class="menu-branding">
-          <div class="portrait"></div>
+          <div class="portrait">
+            <div id="loader-wrapper">
+              <div id="loader"></div>
+            </div>
+          </div>
         </div>
         <ul class="menu-nav-list">
           <li class="nav-item">
@@ -46,8 +50,9 @@
 
     <main id="about">
       <h1 class="lg-heading">About <span class="text-secondary">Me</span></h1>
-      <h2 class="sm-heading">
-        Let me tell you a few things...
+      <h2 class="sm-heading typewriter" 
+        data-period="1000"
+        data-type='[ "Let me tell you a few things about me...&nbsp;"]'>
       </h2>
       <div class="about-info">
         <img src="img/portrait.jpg" alt="Jack" class="bio-img">
@@ -77,6 +82,8 @@
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/onload.js"></script>
   </body>
   <footer id="main-footer">
     Copyright &copy; 2020

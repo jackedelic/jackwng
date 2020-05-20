@@ -17,6 +17,7 @@
   // Rotate into 'X' when menu-btn is clicked (close class added)
   &.close {
     .btn-line {
+      background-color: $secondary-color;
       &:nth-child(1) {
         position: relative;
         top: 9px;
@@ -29,7 +30,7 @@
         transform: rotate(-405deg);
       }
       &:nth-child(3) {
-        top: -8px;
+        top: -7.5px;
         position: relative;
         transform-origin: center;
         transform: rotate(-405deg);
@@ -72,6 +73,7 @@
       transform: translate3d(50vw, 0, 0);
       .nav-link:hover {
         color: $secondary-color;
+        font-size: 3rem;
       }
       .nav-link {
         @include easeOut();
@@ -80,7 +82,7 @@
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 300;
-        font-size: 30px;
+        font-size: 2rem;
         &.current {
           color: $secondary-color;
         }

@@ -3,14 +3,15 @@ const menu = document.querySelector(".menu"); // nav
 const menuBranding = document.querySelector(".menu-branding");
 const menuNavList = document.querySelector(".menu-nav-list");
 const navItems = document.querySelectorAll(".nav-item");
-
 const navLinks = document.querySelectorAll(".nav-link");
+const loaderWrapper = document.getElementById("loader-wrapper");
 
 var showMenu = false;
 
 menuBtn.addEventListener("click", toggleMenu);
 navLinks.forEach((navLink) => {
   navLink.addEventListener("click", toggleCurrent);
+  navLink.addEventListener("click", runLoader);
 });
 
 function toggleMenu() {
@@ -42,4 +43,12 @@ function toggleCurrent(ev) {
     navLink.classList.remove("current");
   });
   ev.target.classList.add("current");
+}
+
+function runLoader() {
+  loaderWrapper.classList.remove("hidden");
+}
+
+function hideLoader() {
+  loaderWrapper.classList.add("hidden");
 }

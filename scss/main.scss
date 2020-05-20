@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+@import "loader";
 
 * {
   box-sizing: border-box;
@@ -10,7 +11,7 @@ body {
   background-color: $primary-color;
   margin: 0;
   color: set-text-color($primary-color);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Muli, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 
@@ -21,16 +22,37 @@ main {
     margin-top: 1rem;
     a {
       padding: 0.4rem;
-      &:hover {
-        color: $secondary-color;
+      * {
         @include easeOut();
+      }
+      &:hover {
+        * {
+          color: $secondary-color;
+          transform-origin: center;
+          transform: scale(1.2);
+        }
       }
     }
   }
   &#home {
-    overflow: hidden;
-    h1 {
+    .lg-heading {
       margin-top: 20vh;
+    }
+  }
+  &#home,
+  &#about,
+  &#work,
+  &#contact {
+    .lg-heading {
+      opacity: 0;
+      transform: translateY(-40px);
+      animation: fadeIn 2s ease-out 0.3s;
+      animation-fill-mode: forwards;
+    }
+    .sm-heading {
+      background-color: transparent;
+      animation: bgFadeIn 2s ease-out 1.6s;
+      animation-fill-mode: forwards;
     }
   }
 }
@@ -45,8 +67,8 @@ h3 {
   }
   &.sm-heading {
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
     background-color: rgba(lighten($color: $primary-color, $amount: 1), 0.5);
+    padding: 0 0.5rem;
   }
 }
 
@@ -67,7 +89,7 @@ header {
 
 .about-info {
   display: grid;
-  grid-gap: 1rem;
+  gap: 1rem;
   grid-template-areas:
     "bio-img bio bio"
     "job-1 job-2 job-3";
@@ -116,10 +138,16 @@ header {
   }
   .btn {
     margin-top: 0.4rem;
+    text-align: center;
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      font-size: 1.4rem;
+    }
   }
 }
 
 .btn {
+  @include easeOut();
   display: block;
   padding: 0.5rem 1rem;
   &:hover {
@@ -140,22 +168,21 @@ header {
   color: #333;
 }
 
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.contact-boxes {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
   margin-top: 1rem;
-  align-items: center;
-
   .contact-item {
+    @include easeOut();
     font-size: 2rem;
     border: 3px solid white;
     padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
+    overflow: hidden;
     &:hover {
-      @include easeOut();
       background: $secondary-color;
       color: set-text-color($secondary-color);
+      cursor: pointer;
       padding: 0.5rem 1.5rem;
       border-color: $secondary-color;
       span {
@@ -165,6 +192,20 @@ header {
   }
 }
 
+.typewriter {
+  .wrap {
+    border-right: 0.1em solid set-text-color($primary-color);
+  }
+}
+.rotate-typewriter {
+  .wrap {
+    border-right: 0.1em solid set-text-color($primary-color);
+  }
+}
+
+.blinking {
+  animation: blinking 1.2s steps(44) 0s infinite normal;
+}
 #main-footer {
   height: 60px;
   text-align: center;
