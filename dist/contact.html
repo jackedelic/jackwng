@@ -56,27 +56,81 @@
         data-type='[ "Some ways you can reach me...&nbsp;"]'
       ></h2>
       <div class="contact-boxes">
-        <div class="contact-item">
+        <a class="contact-item" id="email-item">
+          <div id="email-tooltip" class="hidden tooltip">Copied!</div>
+          <input
+            type="text"
+            id="email-input"
+            style="transform: scale(0); position: absolute;"
+            value="jackwong3101@yahoo.com"
+          />
           <span class="text-secondary">Email: </span>
           jackwong3101@yahoo.com
-        </div>
-        <div class="contact-item">
+          <i class="fas fa-envelope fa-2x"></i>
+        </a>
+        <a class="contact-item" id="phone-item">
           <span class="text-secondary">Phone: </span>
+          <input
+            type="text"
+            id="phone-input"
+            style="transform: scale(0); position: absolute;"
+            value="+65 81417700"
+          />
+          <div id="phone-tooltip" class="hidden tooltip">Copied!</div>
           +65 8141 7700
-        </div>
-        <div class="contact-item">
+          <i class="fas fa-phone fa-2x"></i>
+        </a>
+        <a
+          class="contact-item"
+          href="https://www.linkedin.com/in/jack-wong-nus/"
+          target="_blank"
+          rel="noopener noferer"
+        >
           <span class="text-secondary">Linkedin: </span>
-          jack
-        </div>
-        <div class="contact-item">
+          linkedin.com/in/jack-wong-nus
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <a
+          class="contact-item"
+          href="https://www.facebook.com/profile.php?id=100000580297121"
+          target="_blank"
+          rel="noopener noferer"
+        >
+          <span class="text-secondary">Facebook: </span>
+          Jack Wong
+          <i class="fab fa-facebook-square fa-2x"></i>
+        </a>
+        <a
+          class="contact-item"
+          href="https://web.telegram.org/#/im?p=@jaackwong"
+          target="_blank"
+          rel="noopener noferer"
+        >
+          <span class="text-secondary">Telegram: </span>
+          @jaackwong
+          <i class="fab fa-telegram-plane fa-2x"></i>
+        </a>
+        <a class="contact-item" href="#" target="_blank" rel="noopener noferer">
           <span class="text-secondary">My website: </span>
-          www.jackwng.com/contact.html
-        </div>
+          www.jackwng.com
+          <i class="fas fa-desktop fa-2x"></i>
+        </a>
+        <a
+          class="contact-item"
+          href="https://www.instagram.com/jaackwong/"
+          target="_blank"
+          rel="noopener noferer"
+        >
+          <span class="text-secondary">Instagram: </span>
+          @jaackwong
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
       </div>
     </main>
 
     <script src="js/main.js"></script>
     <script src="js/animation.js"></script>
+    <script src="js/contact.js"></script>
     <script src="js/onload.js"></script>
   </body>
   <footer id="main-footer">

@@ -175,10 +175,28 @@ header {
   margin-top: 1rem;
   .contact-item {
     @include easeOut();
-    font-size: 1.7rem;
+    position: relative;
     border: 3px solid white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    font-size: 1.7rem;
     padding: 1.5rem 2.5rem;
-    overflow: hidden;
+    .tooltip {
+      position: absolute;
+      top: -50%;
+      font-size: 1rem;
+      background-color: black;
+      border: 2px solid black;
+      border-radius: 4px;
+      padding: 0 0.5rem;
+      color: white;
+      &-fade {
+        animation: fadeOut 3s ease-out, throb 0.4s ease-in;
+      }
+    }
     &:hover {
       background: $secondary-color;
       color: set-text-color($secondary-color);
