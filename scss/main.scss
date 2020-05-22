@@ -127,22 +127,39 @@ header {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
-  img {
+  .item {
     @include easeOut();
-    height: 50px;
-    width: 100%;
-    border: 3px solid white;
+    justify-self: center;
+    max-width: 350px;
     &:hover {
-      border-color: $secondary-color;
+      transform: scale(1.1);
+    }
+  }
+  .thumbnail {
+    display: flex;
+    img {
+      @include easeOut();
+      object-fit: cover;
+      object-position: top;
+      height: 150px;
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+      &:hover {
+        border-color: $secondary-color;
+        object-position: bottom;
+      }
     }
   }
   .btn {
-    margin-top: 0.4rem;
     text-align: center;
     &:hover {
       padding: 0.5rem 1.5rem;
       font-size: 1.4rem;
     }
+  }
+  // round border
+  .btn-dark {
+    border-radius: 0 0 8px 8px;
   }
 }
 

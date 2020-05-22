@@ -347,19 +347,31 @@ header {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, 1fr); }
-  .projects img {
+  .projects .item {
     transition: all 0.5s ease-out;
-    height: 50px;
-    width: 100%;
-    border: 3px solid white; }
-    .projects img:hover {
-      border-color: #eece1a; }
+    justify-self: center;
+    max-width: 350px; }
+    .projects .item:hover {
+      transform: scale(1.1); }
+  .projects .thumbnail {
+    display: flex; }
+    .projects .thumbnail img {
+      transition: all 0.5s ease-out;
+      object-fit: cover;
+      object-position: top;
+      height: 150px;
+      width: 100%;
+      border-radius: 8px 8px 0 0; }
+      .projects .thumbnail img:hover {
+        border-color: #eece1a;
+        object-position: bottom; }
   .projects .btn, .projects .btn-dark, .projects .btn-light {
-    margin-top: 0.4rem;
     text-align: center; }
     .projects .btn:hover, .projects .btn-dark:hover, .projects .btn-light:hover {
       padding: 0.5rem 1.5rem;
       font-size: 1.4rem; }
+  .projects .btn-dark {
+    border-radius: 0 0 8px 8px; }
 
 .btn, .btn-dark, .btn-light {
   transition: all 0.5s ease-out;
