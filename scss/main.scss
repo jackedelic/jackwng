@@ -16,7 +16,6 @@ body {
 }
 
 main {
-  padding: 4rem;
   min-height: calc(100vh - 60px);
   .icons {
     margin-top: 1rem;
@@ -35,9 +34,27 @@ main {
     }
   }
   &#home {
-    .lg-heading {
-      margin-top: 20vh;
+    scroll-behavior: smooth;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    .welcome {
+      padding: 4rem;
+      .lg-heading {
+        margin-top: 20vh;
+      }
+      scroll-snap-align: center;
+      height: 100vh;
     }
+    .skillset {
+      scroll-snap-align: center;
+      height: 100vh;
+    }
+  }
+  &#about,
+  &#work,
+  &#contact {
+    padding: 4rem;
   }
   &#home,
   &#about,

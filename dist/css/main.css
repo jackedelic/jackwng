@@ -251,6 +251,7 @@ body {
       background-color: rgba(68, 68, 68, 0.4);
       z-index: -1; }
   body.bg-home {
+    overflow: hidden;
     background-image: url(../img/background.jpg); }
   body.bg-about {
     background-image: url(../img/bg-about.svg); }
@@ -265,7 +266,6 @@ body {
       background-color: rgba(68, 68, 68, 0.9); }
 
 main {
-  padding: 4rem;
   min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
@@ -277,8 +277,22 @@ main {
         color: #eece1a;
         transform-origin: center;
         transform: scale(1.2); }
-  main#home .lg-heading {
-    margin-top: 20vh; }
+  main#home {
+    scroll-behavior: smooth;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh; }
+    main#home .welcome {
+      padding: 4rem;
+      scroll-snap-align: center;
+      height: 100vh; }
+      main#home .welcome .lg-heading {
+        margin-top: 20vh; }
+    main#home .skillset {
+      scroll-snap-align: center;
+      height: 100vh; }
+  main#about, main#work, main#contact {
+    padding: 4rem; }
   main#home .lg-heading, main#about .lg-heading, main#work .lg-heading, main#contact .lg-heading {
     opacity: 0;
     transform: translateY(-40px);
@@ -463,6 +477,7 @@ header {
       width: 100%; }
     .menu-branding {
       height: 25vh;
+      padding-top: 4rem;
       transform: translate3d(-100%, 0, 0); }
       .menu-branding .portrait {
         width: 120px;
@@ -503,8 +518,9 @@ header {
 @media screen and (max-width: 567px) {
   main {
     align-items: center;
-    text-align: center;
-    padding: 2rem; }
+    text-align: center; }
+    main#about, main#work, main#contact {
+      padding: 2rem; }
     main#home .lg-heading {
       margin-top: 26vh !important; }
     main#home .sm-heading {

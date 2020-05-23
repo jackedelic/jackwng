@@ -36,6 +36,7 @@ $background-opacity: 0.4;
     }
     &.bg-home {
       @extend .bg-img;
+      overflow: hidden;
       background-image: $home-bg-img;
     }
     &.bg-about {

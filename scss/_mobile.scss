@@ -28,6 +28,7 @@
     }
     &-branding {
       height: 25vh;
+      padding-top: 4rem;
       transform: translate3d(-100%, 0, 0);
       .portrait {
         width: 120px;
@@ -93,7 +94,11 @@
   main {
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    &#about,
+    &#work,
+    &#contact {
+      padding: 2rem;
+    }
     &#home {
       .lg-heading {
         margin-top: 26vh !important;
