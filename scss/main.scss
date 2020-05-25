@@ -47,6 +47,29 @@ main {
       height: 100vh;
     }
     .skillset {
+      display: grid;
+      padding: 2rem;
+      gap: 1.5rem;
+      grid-template-areas:
+        "card-1 card-2"
+        "card-1 card-3";
+      grid-template-columns: repeat(2, 1fr);
+      transition: background-color 0.6s ease-in;
+      scroll-snap-align: center;
+      height: 100vh;
+      h1,
+      h2,
+      h3 {
+        color: set-text-color($bg-light);
+      }
+      img {
+        height: 40px;
+        width: auto;
+      }
+    }
+    .this-website {
+      transition: background-color 0.6s ease-in;
+      background-color: transparent;
       scroll-snap-align: center;
       height: 100vh;
     }

@@ -1,6 +1,3 @@
-.hidden {
-  visibility: hidden; }
-
 @font-face {
   font-family: Muli;
   src: url(../fonts/Muli/static/Muli-Regular.ttf); }
@@ -40,6 +37,39 @@
 @keyframes blinking {
   50% {
     border-right-color: transparent; } }
+
+.hidden {
+  visibility: hidden; }
+
+.lightenBg {
+  transition: background-color 0.6s ease-in;
+  background-color: #7a7a7a;
+  opacity: 0.7; }
+
+.card {
+  background-color: #fafafa;
+  border-radius: 4px;
+  padding: 1rem;
+  font-size: 1.3rem;
+  width: 100%; }
+  .card .card__body ul {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem; }
+    .card .card__body ul li {
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      color: #000; }
+  .card-1 {
+    grid-area: card-1; }
+  .card-2 {
+    grid-area: card-2; }
+  .card-3 {
+    grid-area: card-3; }
 
 .menu-btn {
   position: absolute;
@@ -251,7 +281,6 @@ body {
       background-color: rgba(68, 68, 68, 0.4);
       z-index: -1; }
   body.bg-home {
-    overflow: hidden;
     background-image: url(../img/background.jpg); }
   body.bg-about {
     background-image: url(../img/bg-about.svg); }
@@ -289,6 +318,24 @@ main {
       main#home .welcome .lg-heading {
         margin-top: 20vh; }
     main#home .skillset {
+      display: grid;
+      padding: 2rem;
+      gap: 1.5rem;
+      grid-template-areas: "card-1 card-2" "card-1 card-3";
+      grid-template-columns: repeat(2, 1fr);
+      transition: background-color 0.6s ease-in;
+      scroll-snap-align: center;
+      height: 100vh; }
+      main#home .skillset h1,
+      main#home .skillset h2,
+      main#home .skillset h3 {
+        color: #000; }
+      main#home .skillset img {
+        height: 40px;
+        width: auto; }
+    main#home .this-website {
+      transition: background-color 0.6s ease-in;
+      background-color: transparent;
       scroll-snap-align: center;
       height: 100vh; }
   main#about, main#work, main#contact {
