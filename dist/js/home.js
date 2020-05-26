@@ -5,16 +5,12 @@ home.addEventListener("scroll", (ev) => {
   const skillsetY = skillset.getBoundingClientRect().y;
   const skillsetHeight = skillset.getBoundingClientRect().height;
   const skillsetBottom = skillsetY + skillsetHeight;
-  console.log("home is scrolling");
   if (
-    (skillsetY >= 0 && skillsetY <= window.innerHeight / 2) ||
-    (skillsetBottom >= window.innerHeight / 2 &&
-      skillsetBottom <= window.innerHeight)
+    skillsetY >= window.innerHeight / 2 ||
+    skillsetBottom <= window.innerHeight / 2
   ) {
-    console.log("adding lightenBg");
-    skillset.classList.add("lightenBg");
-  } else {
-    // console.log("removing lightenBg");
     skillset.classList.remove("lightenBg");
+  } else {
+    skillset.classList.add("lightenBg");
   }
 });

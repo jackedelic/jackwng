@@ -68,7 +68,7 @@
         </div>
       </section>
       <section class="skillset">
-        <div class="grid-item grid-item--col-1-3 bg-pic--dark">
+        <div class="grid-item col-1-3 bg-pic--dark">
           <div class="flex-col">
             <h2>Technologies set</h2>
           </div>
@@ -81,7 +81,7 @@
           </div>
         </div>
 
-        <div class="grid-item bg-pic--dark">
+        <div class="grid-item bg-pic--dark bg-pic--bright-lg bg-pic--dark-sm">
           <div class="flex-col">
             <img src="img/jekyll.svg" alt="" />
             Jekyll
@@ -94,15 +94,15 @@
           </div>
         </div>
 
-        <div class="grid-item bg-pic--bright">
+        <div class="grid-item bg-pic--bright bg-pic--dark-lg">
           <div class="flex-col">
             <img src="img/java.svg" alt="" />
-            <p>Java</p>
+            Java
           </div>
         </div>
 
         <div
-          class="grid-item grid-item--col-1-5 bg-pic--dark justify-content--space-around"
+          class="grid-item col-1-5 bg-pic--dark justify-content--space-around hidden-lg"
         >
           <div class="flex-col">
             <img src="img/html-5.svg" alt="" />
@@ -122,7 +122,36 @@
             Sass/Scss
           </div>
         </div>
-
+        <!-- START shows when screen smaller than XL -->
+        <div
+          class="grid-item bg-pic--dark bg-pic--bright-lg bg-pic--dark-sm hidden-xl"
+        >
+          <div class="flex-col">
+            <img src="img/html-5.svg" alt="" />
+            HTML5
+          </div>
+        </div>
+        <div
+          class="grid-item bg-pic--dark bg-pic--bright-lg bg-pic--dark-sm hidden-xl"
+        >
+          <div class="flex-col">
+            <img src="img/css-3.svg" alt="" />
+            CSS3
+          </div>
+        </div>
+        <div class="grid-item bg-pic--dark bg-pic--bright-sm hidden-xl">
+          <div class="flex-col">
+            <img src="img/javascript.svg" alt="" />
+            Javascript/ES6
+          </div>
+        </div>
+        <div class="grid-item bg-pic--dark hidden-xl">
+          <div class="flex-col">
+            <img src="img/sass.svg" alt="" />
+            Sass/Scss
+          </div>
+        </div>
+        <!-- END -->
         <div class="grid-item bg-pic--bright">
           <div class="flex-col">
             <img src="img/flutter.svg" alt="" />
@@ -137,14 +166,14 @@
           </div>
         </div>
 
-        <div class="grid-item bg-pic--dark">
+        <div class="grid-item bg-pic--dark bg-pic--bright-lg">
           <div class="flex-col">
             <img src="img/ruby-on-rails.svg" alt="" />
             Rails
           </div>
         </div>
 
-        <div class="grid-item bg-pic--dark">
+        <div class="grid-item bg-pic--dark bg-pic--bright-lg">
           <div class="flex-col">
             <img src="img/hugo.svg" alt="" />
             Hugo
@@ -152,7 +181,7 @@
         </div>
 
         <div
-          class="grid-item grid-item--col-3-7 bg-pic--bright justify-content--space-around"
+          class="grid-item col-3-7 bg-pic--bright justify-content--space-around hidden-lg"
         >
           <div class="flex-col">
             <img src="img/mongodb.svg" alt="" />
@@ -171,8 +200,36 @@
             Node.js
           </div>
         </div>
+        <!-- START shows when screen smaller than XL -->
+        <div class="grid-item bg-pic--dark bg-pic--bright-lg hidden-xl">
+          <div class="flex-col">
+            <img src="img/mongodb.svg" alt="" />
+            MongoDB
+          </div>
+        </div>
+        <div
+          class="grid-item bg-pic--dark bg-pic--bright-lg bg-pic--bright-sm hidden-xl"
+        >
+          <div class="flex-col">
+            <img src="img/expressjs.svg" alt="" />
+            Express.js
+          </div>
+        </div>
+        <div class="grid-item bg-pic--dark bg-pic--bright-lg hidden-xl">
+          <div class="flex-col">
+            <img src="img/react.svg" alt="" />
+            React.js
+          </div>
+        </div>
+        <div class="grid-item bg-pic--dark bg-pic--bright-lg hidden-xl">
+          <div class="flex-col">
+            <img src="img/nodejs.svg" alt="" />
+            Node.js
+          </div>
+        </div>
+        <!-- END -->
 
-        <div class="grid-item bg-pic--dark">
+        <div class="grid-item bg-pic--dark bg-pic--bright-lg">
           <div class="flex-col">
             <img src="img/git-icon.svg" alt="" />
             Version control (Git)
@@ -198,12 +255,16 @@
         </div>
       </section>
       <section class="this-website">
-        <h1>How this website is made <img src="img/mongodb.svg" alt="" /></h1>
+        <h2
+          class="sm-heading"
+          data-period="1000"
+          data-type='[ "How this website is made.&nbsp;"]'
+        ></h2>
       </section>
     </main>
-    <script src="js/home.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animation.js"></script>
     <script src="js/onload.js"></script>
+    <script src="js/home.js"></script>
   </body>
 </html>

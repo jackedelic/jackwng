@@ -51,9 +51,8 @@
   justify-content: space-around !important; }
 
 .lightenBg {
-  transition: background-color 0.6s ease-in;
   background-color: #7a7a7a;
-  opacity: 0.7; }
+  opacity: 0.8 !important; }
 
 .menu-btn {
   position: absolute;
@@ -262,7 +261,7 @@ body {
       right: 0;
       height: 100vh;
       width: 100%;
-      background-color: rgba(68, 68, 68, 0.4);
+      background-color: rgba(68, 68, 68, 0.1);
       z-index: -1; }
   body.bg-home {
     background-image: url(../img/background.jpg); }
@@ -293,7 +292,7 @@ main {
   main#home {
     scroll-behavior: smooth;
     overflow: scroll;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     height: 100vh; }
     main#home .welcome {
       padding: 4rem;
@@ -305,20 +304,20 @@ main {
       display: grid;
       padding: 10px;
       gap: 10px;
-      grid-template-columns: repeat(6, 1fr);
-      transition: background-color 0.6s ease-in;
-      scroll-snap-align: center;
-      height: 100vh; }
+      transition: all 0.6s ease-in;
+      min-height: 100vh;
+      opacity: 0.3;
+      scroll-snap-align: center; }
       main#home .skillset h1,
       main#home .skillset h2,
       main#home .skillset h3 {
         color: #000; }
       main#home .skillset img {
-        height: 50px;
+        max-height: 50px;
         max-width: 150px; }
       main#home .skillset .grid-item {
         font-size: 1.5rem;
-        padding: 0 1rem;
+        padding: 1rem;
         background-size: cover;
         background-attachment: fixed; }
         main#home .skillset .grid-item h2 {
@@ -328,7 +327,8 @@ main {
       transition: background-color 0.6s ease-in;
       background-color: transparent;
       scroll-snap-align: center;
-      height: 100vh; }
+      height: 100vh;
+      padding: 3rem; }
   main#about, main#work, main#contact {
     padding: 4rem; }
   main#home .lg-heading, main#about .lg-heading, main#work .lg-heading, main#contact .lg-heading {
@@ -483,22 +483,23 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  text-align: center; }
-  .grid-item--col-1-3 {
+  text-align: center;
+  border-radius: 8px; }
+  .grid-item.col-1-3 {
     grid-column: 1 / 3; }
-  .grid-item--col-1-4 {
+  .grid-item.col-1-4 {
     grid-column: 1 / 4; }
-  .grid-item--col-1-5 {
+  .grid-item.col-1-5 {
     grid-column: 1 / 5; }
-  .grid-item--col-3-7 {
+  .grid-item.col-3-7 {
     grid-column: 3 / 7; }
 
 .bg-pic--bright {
-  background: black url(../img/ice-cave.jpg);
+  background: black url(../img/sunset.jpg);
   color: #333; }
 
 .bg-pic--dark {
-  background-image: url(https://i.ibb.co/dBLbrRV/bg1.jpg); }
+  background-image: url(../img/workdesk.jpg); }
 
 .typewriter .wrap {
   border-right: 0.1em solid #fff; }
@@ -518,16 +519,33 @@ header {
 
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+  .skillset {
+    grid-template-columns: repeat(6, 1fr); }
+  .hidden-xl {
+    display: none; } }
 
 @media screen and (max-width: 1170px) {
-  .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+  main#work .projects {
+    grid-template-columns: repeat(3, 1fr); }
+  main#home .skillset {
+    grid-template-columns: repeat(4, 1fr); }
+    main#home .skillset .grid-item {
+      font-size: 1.1rem; }
+  .hidden-lg {
+    display: none; }
+  .bg-pic--bright-lg {
+    background: black url(../img/sunset.jpg);
+    color: #333; }
+  .bg-pic--dark-lg {
+    background-image: url(../img/workdesk.jpg); } }
 
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
     text-align: center; }
+    main#home .skillset {
+      grid-template-columns: repeat(2, 1fr); }
   h1.lg-heading {
     font-size: 5rem;
     margin-top: 10vh; }
@@ -537,7 +555,6 @@ header {
       width: 100%; }
     .menu-branding {
       height: 25vh;
-      padding-top: 4rem;
       transform: translate3d(-100%, 0, 0); }
       .menu-branding .portrait {
         width: 120px;
@@ -582,10 +599,12 @@ header {
     main#about, main#work, main#contact {
       padding: 2rem; }
     main#home .lg-heading {
-      margin-top: 26vh !important; }
+      margin-top: 25vh !important; }
     main#home .sm-heading {
       margin-top: 1rem !important;
       margin-bottom: 1rem !important; }
+    main#home .skillset img {
+      max-width: 130px; }
   h1.lg-heading {
     font-size: 3.2rem;
     margin-top: 8vh !important; }
@@ -596,4 +615,9 @@ header {
     margin-bottom: 0.5rem;
     font-size: 1rem; }
     .contact-boxes .contact-item span {
-      display: none; } }
+      display: none; }
+  .bg-pic--bright-sm {
+    background: black url(../img/sunset.jpg);
+    color: #333; }
+  .bg-pic--dark-sm {
+    background-image: url(../img/workdesk.jpg); } }

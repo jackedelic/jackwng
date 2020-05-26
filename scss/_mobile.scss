@@ -1,13 +1,42 @@
+// This is desktop first (as opposed to mobile first).
 // Widescreens
 @include mediaXl {
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
+  .skillset {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .hidden-xl {
+    display: none;
+  }
 }
 // Desktops and laptops
 @include mediaLg {
-  .projects {
-    grid-template-columns: repeat(3, 1fr);
+  main#work {
+    .projects {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  main#home {
+    .skillset {
+      grid-template-columns: repeat(4, 1fr);
+      .grid-item {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .hidden-lg {
+    display: none;
+  }
+  .bg-pic--bright-lg {
+    background: rgba($color: #000000, $alpha: 1) url(../img/sunset.jpg);
+    color: #333;
+  }
+  .bg-pic--dark-lg {
+    background-image: url(../img/workdesk.jpg);
   }
 }
 // Tablets and small laptops
@@ -15,6 +44,11 @@
   main {
     align-items: center;
     text-align: center;
+    &#home {
+      .skillset {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
   h1.lg-heading {
     font-size: 5rem;
@@ -28,7 +62,6 @@
     }
     &-branding {
       height: 25vh;
-      padding-top: 4rem;
       transform: translate3d(-100%, 0, 0);
       .portrait {
         width: 120px;
@@ -101,11 +134,16 @@
     }
     &#home {
       .lg-heading {
-        margin-top: 26vh !important;
+        margin-top: 25vh !important;
       }
       .sm-heading {
         margin-top: 1rem !important;
         margin-bottom: 1rem !important;
+      }
+      .skillset {
+        img {
+          max-width: 130px;
+        }
       }
     }
   }
@@ -127,5 +165,12 @@
         display: none;
       }
     }
+  }
+  .bg-pic--bright-sm {
+    background: rgba($color: #000000, $alpha: 1) url(../img/sunset.jpg);
+    color: #333;
+  }
+  .bg-pic--dark-sm {
+    background-image: url(../img/workdesk.jpg);
   }
 }
