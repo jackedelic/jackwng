@@ -518,9 +518,9 @@ header {
   color: #fff; }
 
 @media screen and (min-width: 1171px) {
-  .projects {
+  main#work .projects {
     grid-template-columns: repeat(4, 1fr); }
-  .skillset {
+  main#home .skillset {
     grid-template-columns: repeat(6, 1fr); }
   .hidden-xl {
     display: none; } }
@@ -545,6 +545,8 @@ header {
     align-items: center;
     text-align: center; }
     main#home .skillset {
+      grid-template-columns: repeat(2, 1fr); }
+    main#work .projects {
       grid-template-columns: repeat(2, 1fr); }
   h1.lg-heading {
     font-size: 5rem;
@@ -585,8 +587,6 @@ header {
   .about-info {
     grid-template-areas: "bio-img" "bio" "job-1" "job-2" "job-3";
     grid-template-columns: 1fr; }
-  .projects {
-    grid-template-columns: repeat(2, 1fr); }
   .contact-boxes .contact-item {
     padding: 0.7rem 1.8rem;
     margin-bottom: 1.3rem;
@@ -605,11 +605,11 @@ header {
       margin-bottom: 1rem !important; }
     main#home .skillset img {
       max-width: 130px; }
+    main#work .projects {
+      grid-template-columns: 1fr; }
   h1.lg-heading {
     font-size: 3.2rem;
     margin-top: 8vh !important; }
-  .projects {
-    grid-template-columns: 1fr; }
   .contact-boxes .contact-item {
     padding: 0.7rem 1.5rem;
     margin-bottom: 0.5rem;

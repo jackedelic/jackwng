@@ -1,11 +1,17 @@
 // This is desktop first (as opposed to mobile first).
 // Widescreens
 @include mediaXl {
-  .projects {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .skillset {
-    grid-template-columns: repeat(6, 1fr);
+  main {
+    &#work {
+      .projects {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    &#home {
+      .skillset {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
   }
 
   .hidden-xl {
@@ -46,6 +52,11 @@
     text-align: center;
     &#home {
       .skillset {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &#work {
+      .projects {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -111,9 +122,6 @@
     grid-template-columns: 1fr;
   }
 
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .contact-boxes {
     .contact-item {
       padding: 0.7rem 1.8rem;
@@ -146,14 +154,15 @@
         }
       }
     }
+    &#work {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
   }
   h1.lg-heading {
     font-size: 3.2rem;
     margin-top: 8vh !important;
-  }
-
-  .projects {
-    grid-template-columns: 1fr;
   }
 
   .contact-boxes {
