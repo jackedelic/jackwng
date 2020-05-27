@@ -1,0 +1,623 @@
+@font-face {
+  font-family: Muli;
+  src: url(../fonts/Muli/static/Muli-Regular.ttf); }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes throb {
+  0% {
+    transform: scale(1.3); }
+  50% {
+    transform: scale(0.3); }
+  60% {
+    transform: scale(1); }
+  80% {
+    transform: scale(0.5); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes bgFadeIn {
+  0% {
+    background-color: transparent; }
+  100% {
+    background-color: rgba(71, 71, 71, 0.5); } }
+
+@keyframes blinking {
+  50% {
+    border-right-color: transparent; } }
+
+.hidden {
+  visibility: hidden; }
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.justify-content--space-around {
+  justify-content: space-around !important; }
+
+.lightenBg {
+  background-color: #7a7a7a;
+  opacity: 0.8 !important; }
+
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background-color: #fff;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close .btn-line {
+    background-color: #eece1a; }
+    .menu-btn.close .btn-line:nth-child(1) {
+      position: relative;
+      top: 9px;
+      transform-origin: center;
+      transform: rotate(405deg); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0;
+      transform-origin: center;
+      transform: rotate(-405deg); }
+    .menu-btn.close .btn-line:nth-child(3) {
+      top: -7.5px;
+      position: relative;
+      transform-origin: center;
+      transform: rotate(-405deg); }
+
+.menu {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden; }
+  .menu-branding, .menu-nav-list {
+    transition: all 0.5s ease-out;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 50%;
+    height: 100vh; }
+  .menu-nav-list {
+    margin: 0;
+    padding: 0;
+    background-color: #414141;
+    list-style: none;
+    transform: translate3d(0, -100%, 0); }
+    .menu-nav-list.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-nav-list .nav-item {
+      transform: translate3d(50vw, 0, 0); }
+      .menu-nav-list .nav-item .nav-link:hover {
+        color: #eece1a;
+        font-size: 3rem; }
+      .menu-nav-list .nav-item .nav-link {
+        transition: all 0.5s ease-out;
+        display: inline-block;
+        position: relative;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 300;
+        font-size: 2rem; }
+        .menu-nav-list .nav-item .nav-link.current {
+          color: #eece1a; }
+      .menu-nav-list .nav-item.show {
+        transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    background-color: #444444;
+    transform: translate3d(0, 100%, 0); }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 250px;
+      height: 250px;
+      background: url(../img/nana-bio.jpg);
+      background-size: cover;
+      border-radius: 50%;
+      border: solid 3px #eece1a; }
+  .menu.show {
+    visibility: visible; }
+
+.nav-item:nth-child(1) {
+  transition: all 0.5s ease-out;
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition: all 0.5s ease-out;
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition: all 0.5s ease-out;
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition: all 0.5s ease-out;
+  transition-delay: 0.4s; }
+
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; }
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 250px;
+  height: 250px;
+  margin: -125px 0 0 -125px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #3498db;
+  -webkit-animation: spin 2s linear infinite;
+  /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 2s linear infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera */ }
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #e74c3c;
+  -webkit-animation: spin 3s linear infinite;
+  /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 3s linear infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera */ }
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  left: 23px;
+  right: 23px;
+  bottom: 23px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #f9c922;
+  -webkit-animation: spin 1.5s linear infinite;
+  /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 1.5s linear infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera */ }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */ }
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */ } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */ }
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */ } }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #444;
+  margin: 0;
+  color: #fff;
+  font-family: Muli, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; }
+  body.bg-img, body.bg-home, body.bg-about, body.bg-work, body.bg-contact {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center; }
+    body.bg-img::after, body.bg-home::after, body.bg-about::after, body.bg-work::after, body.bg-contact::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: rgba(68, 68, 68, 0.1);
+      z-index: -1; }
+  body.bg-home {
+    background-image: url(../img/background.jpg); }
+  body.bg-about {
+    background-image: url(../img/bg-about.svg); }
+  body.bg-work {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' fill-opacity='1' style='enable-background:new 0 0 500 500'%3E%3Cstyle%3E .st2{fill:rgba(255,255,255,1)} %3C/style%3E%3Cg style='display:none'%3E%3Cpath style='display:inline;fill:%236D6E71' d='M-12-13h525v525H-12z' id='Layer_1'/%3E%3C/g%3E%3Cg id='Layer_2'%3E%3Cpath class='st2' d='M64.9 55.9c-.6-.1-1.2.4-1.2 1-.8 6.3-1.8 12.9-2.9 19.1-.2.9-1.2 1.5-2.3 1.3l-.5-.1c-.6-.1-1-.3-1.3-.7-.2-.3-.2-.6-.1-1 1.8-6.1 2.9-12.8 3.3-19.3 0-.6-.4-1.1-1-1.2-.6 0-1.1.4-1.2 1-.4 6.3-1.5 12.9-3.2 18.8-.3 1-.2 2 .4 2.8.6.9 1.6 1.5 2.8 1.7l.4.1c2.3.3 4.5-1.1 4.9-3.2 1.1-6.2 2.1-12.8 2.9-19.2.1-.5-.4-1-1-1.1zM76.3 58.8c.1-.6-.2-1.2-.8-1.3-.6-.1-1.2.2-1.3.8-1.4 6.3-2.2 13.1-2.3 19.5 0 .4-.1.7-.4.9-.3.3-.8.4-1.4.3l-.4-.1c-1.1-.2-2-1.1-1.9-2 .7-6.2 1.6-12.8 2.6-19.1.1-.6-.3-1.2-.9-1.3-.6-.1-1.2.3-1.3.9-1.1 6.3-2 13-2.6 19.2-.2 2.1 1.4 4.1 3.8 4.4l.4.1c1.2.2 2.4-.1 3.2-.9.8-.7 1.2-1.6 1.2-2.6-.1-6.1.6-12.7 2.1-18.8z'/%3E%3Cpath class='st2' d='M93.2 43.2c1.1-3.9-1.2-7.9-5.1-9-1.5-.4-2.9-.3-4.3.1.1-2.1-1.3-4.1-3.4-4.7-2.1-.6-4.4.5-5.4 2.4-.7-.6-1.5-1.1-2.5-1.4-2.6-.7-5.3.3-6.9 2.4-7.9-.4-15.3 1-16.8 4.9-1.1 1.7-.8 4.1-.3 6.4C38.9 45.7 32 51.7 30.7 60c-.9 6.3 1.7 14.5 11.9 19-.6 2.5-.4 4.1-.4 4.2v.1c1.3 5.3 8.4 9.3 19.5 10.9 10.1 1.5 21.2.1 22-5.3v-.1-.2c-.1-10.7.9-21.4 3.2-31.8 3.5-.2 6.7-2.6 7.7-6.1.8-2.7.2-5.4-1.4-7.5zM81.8 77.7c-.2.4-.6.6-1.2.5l-.4-.1c-1.1-.2-2-1.1-1.9-2.1.1-4.5 1-9.3 1.9-13.9.4-1.9.7-3.8 1.1-5.7.1-.6-.3-1.2-.9-1.3-.6-.1-1.2.3-1.3.9-.3 1.8-.7 3.8-1 5.6-.9 4.7-1.9 9.6-2 14.3-.1 2.1 1.6 4.1 3.8 4.4l.4.1c.5.1.9 0 1.3 0-.6 2.8-8.1 5-18.3 3.5-10.1-1.5-16.8-5.6-16.6-8.5.3.1.7.3 1.1.3l.4.1c2.2.3 4.4-1.1 4.9-3.1 1.7-6.3 2.5-12.8 3.1-19.4.1-.6-.4-1.2-1-1.2-.6-.1-1.2.4-1.2 1-.7 6.8-1.3 12.8-3 19-.3.9-1.4 1.6-2.5 1.5l-.5-.2c-.2 0-.4-.1-.6-.2 3.5-7 3.7-12.3 3.9-19.4 0-1.4.1-2.9.2-4.4.1-1.2-.2-2.6-.6-4.2-.1-.6-.2-1.2-.4-1.8 2.2 2.2 6.1 4 10.6 5.3 0 3.2 2.1 6.2 5.4 7.1 2.5.7 5 0 6.9-1.6.1 0 .1 0 .2.1 2.1.6 4.3 0 5.9-1.5 1.1 1.7 2.8 3 4.8 3.6.1 0 .3.1.4.1-1.5 7-2.4 14.1-2.9 21.2zm-11.3-38c.1-.4.5-.7.9-.7.4.1.7.5.7.9-.1.4-.5.7-.9.7s-.7-.5-.7-.9zm1.7 7.4c.1-.4.4-.6.8-.6.4.1.6.4.6.8-.1.4-.4.6-.8.6-.4-.1-.7-.5-.6-.8zm8.2-3.9c.1-.8.9-1.4 1.7-1.2s1.4.9 1.2 1.7c-.1.8-.9 1.4-1.7 1.2-.8-.1-1.4-.9-1.2-1.7zm-15.8-8c-.1.4-.2.8-.2 1.1-1.5.1-2.8 1.1-3.2 2.6-.1.3-.1.6-.1.9-2-.5-4.1.6-4.7 2.7-.2.7-.2 1.4 0 2-3.7-1.8-5.9-3.8-5.6-5.3.3-2.4 6-4.2 13.8-4zM44.8 73.4c-.7 1.2-1.2 2.4-1.5 3.4-8.8-4-11.2-11.1-10.3-16.5 1.1-7.3 7.3-12.7 16-13.8.2 1 .4 1.9.3 2.6 0 .6-.1 1.2-.1 1.8H49c-6.2.8-10.6 4.4-11.4 9.5-.8 4.9 2.1 9.6 7.6 12.2l-.4.8zm-5-12.5c.6-4 4.2-6.9 9.3-7.6v.4c-.2 6.6-.3 11.2-3 17.1-4.5-2.2-6.9-6-6.3-9.9zm48-9.6c-1.3-.2-2.2-1.4-2-2.7.2-1.3 1.4-2.2 2.7-2 1.3.2 2.2 1.4 2 2.7-.2 1.3-1.4 2.2-2.7 2zM113.2 78c.6-.1 1.2.3 1.3 1 .9 6.3 2 12.9 3.2 19 .2.9 1.3 1.5 2.4 1.3l.4-.1c.6-.1 1-.4 1.2-.7.2-.3.2-.6.1-1-1.9-6.1-3.1-12.8-3.6-19.3 0-.6.4-1.2 1-1.2s1.2.4 1.2 1c.5 6.3 1.7 12.8 3.5 18.8.3 1 .2 2-.3 2.8-.6.9-1.6 1.6-2.8 1.8l-.4.1c-2.3.4-4.5-1-4.9-3.1-1.2-6.2-2.3-12.8-3.2-19.2-.1-.6.3-1.2.9-1.2zM101.9 81c-.1-.6.2-1.2.8-1.4.6-.1 1.2.2 1.4.8 1.5 6.3 2.4 13 2.6 19.5 0 .4.1.7.4.9.3.3.9.4 1.4.3l.4-.1c1.1-.2 2-1.1 1.8-2-.8-6.2-1.8-12.8-2.9-19.1-.1-.6.3-1.2.9-1.3.6-.1 1.2.3 1.3.9 1.2 6.3 2.2 13 2.9 19.2.3 2.1-1.4 4.1-3.7 4.5l-.4.1c-1.2.2-2.4-.1-3.2-.8-.8-.6-1.2-1.6-1.2-2.6-.1-6.2-1-12.7-2.5-18.9z'/%3E%3Cpath class='st2' d='M84.7 65.7c-1.1-3.9 1.1-7.9 4.9-9.1 1.5-.4 2.9-.4 4.3 0-.1-2.1 1.2-4.2 3.3-4.8 2.2-.7 4.5.4 5.5 2.4.7-.6 1.5-1.1 2.5-1.4 2.6-.8 5.3.2 6.9 2.3 7.9-.5 15.3.8 16.9 4.7 1.1 1.7.8 4.1.4 6.4 9.6 1.1 16.6 7.1 18 15.4 1 6.3-1.5 14.6-11.6 19.1.7 2.5.5 4.1.5 4.2v.1c-1.2 5.3-8.3 9.4-19.4 11.2-10 1.6-21.2.4-22-5v-.1-.2c0-10.7-1.3-21.3-3.7-31.7-3.5-.1-6.7-2.5-7.8-6-.8-2.7-.2-5.4 1.3-7.5zM96.6 100c.2.4.7.6 1.2.5l.4-.1c1.1-.2 1.9-1.2 1.9-2.2-.1-4.5-1.1-9.3-2.1-13.9-.4-1.9-.8-3.8-1.1-5.7-.1-.6.3-1.2.9-1.3.6-.1 1.2.3 1.3.9.3 1.8.7 3.8 1.1 5.6 1 4.7 2 9.6 2.2 14.3.1 2.1-1.6 4.1-3.8 4.5l-.4.1c-.5.1-.9.1-1.3 0 .6 2.8 8.2 4.8 18.4 3.2 10.1-1.6 16.7-5.8 16.5-8.7-.3.2-.7.3-1 .3l-.4.1c-2.2.3-4.4-1-5-3-1.8-6.3-2.7-12.8-3.4-19.4-.1-.6.4-1.2 1-1.2.6-.1 1.2.4 1.2 1 .8 6.7 1.5 12.8 3.3 19 .3.9 1.4 1.6 2.5 1.5l.4-.1c.2 0 .4-.1.6-.2-3.6-7-3.9-12.2-4.2-19.4-.1-1.4-.1-2.9-.2-4.4-.1-1.2.2-2.6.5-4.2l.3-1.8c-2.2 2.2-6.1 4.1-10.5 5.4.1 3.2-2 6.2-5.3 7.2-2.5.7-5 .1-6.9-1.4-.1 0-.1 0-.2.1-2.1.6-4.3 0-5.9-1.4-1 1.7-2.7 3.1-4.8 3.7-.1 0-.3.1-.4.1 1.6 6.7 2.7 13.8 3.2 20.9zm10.7-38.2c-.1-.4-.5-.7-.9-.6-.4.1-.7.5-.6.9.1.4.5.7.9.6.4-.1.7-.4.6-.9zm-1.5 7.4c-.1-.4-.4-.6-.8-.6-.4.1-.6.4-.6.8s.4.6.8.6.7-.4.6-.8zm-8.2-3.7c-.1-.8-.9-1.3-1.7-1.2-.8.1-1.3.9-1.2 1.7.1.8.9 1.3 1.7 1.2.7-.1 1.3-.9 1.2-1.7zm15.6-8.2c.1.4.2.8.2 1.1 1.5.1 2.8 1.1 3.2 2.6.1.3.1.6.1.9 2-.6 4.1.6 4.7 2.6.2.7.2 1.3 0 2 3.7-1.8 5.8-3.9 5.5-5.4-.2-2.4-5.9-4.2-13.7-3.8zm20.4 37.8c.7 1.2 1.2 2.4 1.6 3.4 8.8-4.1 11-11.2 10.1-16.6-1.2-7.3-7.5-12.5-16.2-13.5-.2 1-.3 2-.3 2.6 0 .6.1 1.2.1 1.8h.2c6.2.7 10.7 4.3 11.5 9.3.8 4.9-2 9.6-7.4 12.4.2.2.3.4.4.6zm4.8-12.5c-.7-4-4.3-6.8-9.4-7.4v.4c.3 6.6.5 11.2 3.2 17 4.5-2.3 6.9-6.1 6.2-10zm-48.2-8.9c1.3-.2 2.2-1.4 2-2.7-.2-1.3-1.4-2.2-2.7-2s-2.2 1.4-2 2.7c.2 1.3 1.4 2.2 2.7 2z'/%3E%3Cg%3E%3Cpath class='st2' d='M344.3 383.6c-.8-.1-1.6.5-1.7 1.3-1 8.4-2.4 17.1-3.8 25.3-.2 1.2-1.6 2-3.1 1.8l-.6-.1c-.7-.1-1.3-.5-1.7-.9-.2-.4-.3-.8-.2-1.3 2.3-8.1 3.9-17 4.4-25.6.1-.8-.6-1.5-1.4-1.6-.8-.1-1.5.6-1.6 1.4-.5 8.4-2 17-4.3 25-.4 1.3-.2 2.6.5 3.7.8 1.2 2.1 2 3.7 2.3l.6.1c3.1.4 6-1.4 6.5-4.2 1.5-8.2 2.8-17 3.9-25.4.2-1-.4-1.8-1.2-1.8zM359.3 387.3c.2-.8-.3-1.6-1.1-1.8-.8-.2-1.6.3-1.8 1.1-1.9 8.4-3 17.3-3 25.8 0 .5-.2.9-.5 1.2-.4.4-1.1.5-1.9.4l-.6-.1c-1.5-.2-2.6-1.4-2.5-2.6.9-8.2 2.1-17 3.5-25.3.1-.8-.4-1.6-1.2-1.7-.8-.1-1.6.4-1.7 1.2-1.4 8.4-2.6 17.2-3.5 25.5-.3 2.8 1.9 5.4 5 5.9l.6.1c1.6.2 3.1-.2 4.2-1.1 1-.9 1.5-2.1 1.5-3.4.1-8.2 1.1-17 3-25.2z'/%3E%3Cpath class='st2' d='M381.8 366.8c1.4-5.1-1.6-10.5-6.7-11.9-1.9-.5-3.9-.5-5.7.1.1-2.8-1.7-5.5-4.5-6.3-2.9-.8-6 .6-7.3 3.2-.9-.8-2-1.5-3.3-1.8-3.5-1-7.1.4-9.1 3.2-10.5-.5-20.3 1.4-22.3 6.5-1.4 2.3-1 5.4-.4 8.5-12.7 1.7-21.9 9.7-23.5 20.7-1.2 8.3 2.3 19.3 15.8 25.1-.8 3.4-.6 5.4-.6 5.6v.2c1.7 7 11.1 12.3 25.9 14.4 13.3 1.9 28.1.1 29.1-7v-.2-.2c-.2-14.1 1.2-28.3 4.2-42.1 4.7-.2 8.9-3.4 10.2-8.1 1.1-3.7.3-7.2-1.8-9.9zm-15.1 45.6c-.3.5-.9.7-1.6.6l-.5-.1c-1.4-.2-2.6-1.5-2.6-2.8.1-6 1.4-12.3 2.6-18.5.5-2.5 1-5.1 1.4-7.5.1-.8-.4-1.6-1.2-1.7-.8-.1-1.6.4-1.7 1.2-.4 2.5-.9 5-1.4 7.5-1.2 6.3-2.5 12.7-2.6 19-.1 2.8 2.2 5.4 5.1 5.8l.5.1c.6.1 1.2.1 1.7-.1-.7 3.8-10.8 6.6-24.3 4.6-13.4-1.9-22.2-7.4-22-11.2.4.2.9.3 1.4.4l.5.1c2.9.4 5.8-1.4 6.5-4.1 2.3-8.4 3.3-17 4.1-25.7.1-.8-.5-1.5-1.3-1.6-.8-.1-1.5.5-1.6 1.3-.9 8.9-1.8 17-4 25.2-.3 1.3-1.9 2.2-3.2 2l-.5-.1c-.3 0-.6-.2-.8-.3 4.6-9.3 4.9-16.3 5.1-25.7.1-1.8.1-3.8.2-5.9.1-1.6-.3-3.5-.8-5.5-.2-.8-.3-1.6-.5-2.4 3 2.9 8.1 5.3 14 7 0 4.3 2.8 8.2 7.1 9.4 3.3.9 6.7 0 9.1-2.1.1 0 .1.1.2.1 2.8.8 5.8 0 7.8-1.9 1.4 2.3 3.6 4 6.4 4.8.2.1.4.1.6.1-1.9 9.2-3.1 18.6-3.7 28zm-14.9-50.3c.1-.6.6-.9 1.2-.9.6.1.9.6.9 1.2-.1.6-.6.9-1.2.9-.6-.2-1-.7-.9-1.2zm2.1 9.7c.1-.5.5-.9 1-.8.5.1.9.5.8 1s-.5.9-1 .8-.9-.5-.8-1zm10.8-5c.2-1.1 1.1-1.8 2.2-1.6 1.1.2 1.8 1.1 1.6 2.2-.2 1.1-1.1 1.8-2.2 1.6-1-.2-1.7-1.2-1.6-2.2zm-20.8-10.6c-.1.5-.2 1-.2 1.5-1.9.1-3.7 1.5-4.2 3.4-.1.4-.2.8-.2 1.2-2.7-.7-5.4.8-6.2 3.5-.2.9-.2 1.8 0 2.6-4.9-2.3-7.8-5-7.5-7.1.4-3 7.9-5.4 18.3-5.1zm-26.2 50.5c-.9 1.6-1.5 3.2-2 4.6-11.7-5.2-14.8-14.7-13.7-21.8 1.4-9.7 9.7-16.8 21.2-18.2.3 1.3.5 2.6.4 3.5 0 .8-.1 1.7-.1 2.4h-.3c-8.3 1.1-14 5.9-15.1 12.6-1 6.5 2.8 12.7 10 16.2-.2.2-.3.5-.4.7zm-6.7-16.5c.8-5.3 5.5-9.1 12.3-10.1v.5c-.3 8.7-.5 14.9-3.9 22.6-6-2.8-9.2-7.8-8.4-13zm63.6-12.7c-1.7-.2-2.9-1.8-2.7-3.6.2-1.7 1.8-2.9 3.6-2.7s2.9 1.8 2.7 3.6c-.3 1.7-1.9 2.9-3.6 2.7z'/%3E%3C/g%3E%3Cg%3E%3Cpath class='st2' d='M408.3 412.8c.8-.1 1.6.5 1.7 1.3 1.2 8.4 2.6 17.1 4.2 25.2.2 1.2 1.7 2 3.1 1.7l.6-.1c.7-.1 1.3-.5 1.6-1 .2-.4.3-.8.1-1.3-2.5-8.1-4.1-16.9-4.8-25.5-.1-.8.5-1.5 1.4-1.6.8-.1 1.5.5 1.6 1.4.7 8.4 2.3 17 4.7 24.9.4 1.3.2 2.6-.4 3.7-.8 1.2-2.1 2.1-3.7 2.3l-.6.1c-3.1.5-6-1.4-6.5-4.1-1.6-8.2-3.1-16.9-4.3-25.4-.1-.8.4-1.5 1.3-1.6zM393.3 416.8c-.2-.8.3-1.6 1.1-1.8.8-.2 1.6.3 1.8 1.1 2 8.4 3.2 17.3 3.4 25.8 0 .5.2.9.5 1.2.4.4 1.1.5 1.9.4l.6-.1c1.5-.2 2.6-1.4 2.4-2.6-1-8.2-2.3-16.9-3.9-25.3-.1-.8.4-1.6 1.2-1.7.8-.1 1.6.4 1.7 1.2 1.5 8.4 2.9 17.2 3.9 25.4.4 2.8-1.8 5.5-4.9 5.9l-.6.1c-1.6.3-3.1-.1-4.2-1.1-1-.8-1.6-2.1-1.6-3.4-.2-8.2-1.3-16.9-3.3-25.1z'/%3E%3Cpath class='st2' d='M370.5 396.6c-1.5-5.1 1.4-10.5 6.5-12 1.9-.6 3.9-.5 5.7 0-.2-2.8 1.6-5.5 4.4-6.4 2.9-.9 6 .5 7.3 3.1.9-.8 2-1.5 3.3-1.9 3.5-1 7.1.3 9.1 3 10.5-.7 20.3 1.1 22.4 6.2 1.4 2.2 1.1 5.4.6 8.4 12.7 1.5 22 9.4 23.8 20.3 1.4 8.3-2 19.3-15.4 25.4.9 3.4.7 5.4.6 5.5v.2c-1.6 7.1-11 12.5-25.7 14.8-13.3 2.1-28.1.6-29.2-6.6v-.2-.2c0-14.1-1.7-28.3-4.9-42.1-4.7-.2-8.9-3.2-10.3-8-1-3.2-.2-6.8 1.8-9.5zm15.8 45.4c.3.5.9.7 1.6.6l.5-.1c1.4-.2 2.6-1.6 2.5-2.9-.2-6-1.5-12.3-2.8-18.4-.5-2.5-1.1-5-1.5-7.5-.1-.8.4-1.6 1.2-1.7.8-.2 1.6.4 1.7 1.2.4 2.4 1 5 1.5 7.4 1.3 6.2 2.7 12.7 2.9 18.9.1 2.8-2.1 5.4-5 5.9l-.5.1c-.6.1-1.2.1-1.7 0 .8 3.7 10.9 6.4 24.4 4.2 13.4-2.1 22.1-7.7 21.8-11.5-.4.2-.9.4-1.4.4l-.5.1c-2.9.5-5.8-1.4-6.6-4-2.4-8.4-3.5-16.9-4.5-25.6-.1-.8.5-1.6 1.3-1.6.8-.1 1.5.5 1.6 1.3 1 8.9 2 17 4.4 25.2.4 1.2 1.9 2.1 3.3 1.9l.5-.1c.3-.1.6-.2.8-.3-4.8-9.2-5.1-16.2-5.5-25.7-.1-1.8-.2-3.8-.3-5.9-.1-1.6.3-3.5.7-5.5.1-.8.3-1.6.4-2.4-2.9 2.9-8.1 5.4-13.9 7.2.1 4.3-2.7 8.3-7 9.6-3.3 1-6.7.1-9.1-1.9-.1 0-.1.1-.2.1-2.8.8-5.8.1-7.8-1.8-1.4 2.3-3.6 4.1-6.3 4.9-.2.1-.4.1-.6.1 2 9 3.4 18.4 4.1 27.8zm14.2-50.6c-.1-.6-.6-.9-1.2-.8-.6.1-.9.6-.8 1.2.1.6.6.9 1.2.8.5-.1.9-.6.8-1.2zm-2 9.8c-.1-.5-.6-.8-1.1-.8s-.8.6-.8 1.1c.1.5.6.8 1.1.8s.9-.6.8-1.1zm-11-4.9c-.2-1.1-1.2-1.8-2.2-1.6-1.1.2-1.8 1.2-1.6 2.2.2 1.1 1.2 1.8 2.2 1.6 1.1-.1 1.8-1.1 1.6-2.2zm20.8-10.9l.3 1.5c1.9.1 3.7 1.4 4.3 3.4.1.4.2.8.2 1.2 2.7-.8 5.4.8 6.2 3.4.3.9.3 1.8.1 2.6 4.9-2.4 7.7-5.1 7.3-7.2-.6-3.1-8.1-5.4-18.4-4.9zm26.9 50.1c.9 1.6 1.6 3.1 2.1 4.5 11.6-5.4 14.5-14.9 13.4-22-1.6-9.7-10-16.6-21.5-17.9-.2 1.4-.4 2.6-.4 3.5.1.8.1 1.6.1 2.4h.3c8.3 1 14.1 5.7 15.3 12.3 1.1 6.5-2.6 12.7-9.8 16.4.3.3.4.6.5.8zm6.5-16.6c-.9-5.3-5.7-9-12.5-9.9v.5c.4 8.7.7 14.8 4.3 22.6 5.9-3 9.1-8 8.2-13.2zm-63.9-11.7c1.7-.3 2.9-1.9 2.6-3.6-.3-1.7-1.9-2.9-3.6-2.6-1.7.3-2.9 1.9-2.6 3.6.3 1.7 1.9 2.8 3.6 2.6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 400px; }
+    body.bg-work::after {
+      background-color: rgba(68, 68, 68, 0.9); }
+  body.bg-contact {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23eece1a' fill-opacity='1'%3E%3Cpath d='M24.37 16c.2.65.39 1.32.54 2H21.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06A5 5 0 0 1-17.45 28v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H-20a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1L.9 19.22a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0L2.26 23h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM-13.82 27l16.37 4.91L18.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H-13.1z'/%3E%3Cpath id='path6_fill-copy' d='M284.37 16c.2.65.39 1.32.54 2H281.17l1.17 2.34.45.9-.24.11V28a5 5 0 0 1-2.23 8.94l-.02.06a8 8 0 0 1-7.75 6h-20a8 8 0 0 1-7.74-6l-.02-.06a5 5 0 0 1-2.24-8.94v-6.76l-.79-1.58-.44-.9.9-.44.63-.32H240a23.01 23.01 0 0 1 44.37-2zm-36.82 2a1 1 0 0 0-.44.1l-3.1 1.56.89 1.79 1.31-.66a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .9 0l2.21-1.1a3 3 0 0 1 2.69 0l2.2 1.1a1 1 0 0 0 .86.02l2.88-1.27a3 3 0 0 1 2.43 0l2.88 1.27a1 1 0 0 0 .85-.02l3.1-1.55-.89-1.79-1.42.71a3 3 0 0 1-2.56.06l-2.77-1.23a1 1 0 0 0-.4-.09h-.01a1 1 0 0 0-.4.09l-2.78 1.23a3 3 0 0 1-2.56-.06l-2.3-1.15a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01a1 1 0 0 0-.44.1l-2.21 1.11a3 3 0 0 1-2.69 0l-2.2-1.1a1 1 0 0 0-.45-.11h-.01zm0-2h-4.9a21.01 21.01 0 0 1 39.61 0h-2.09l-.06-.13-.26.13h-32.31zm30.35 7.68l1.36-.68h1.3v2h-36v-1.15l.34-.17 1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.69 0l1.36-.68h2.59l1.36.68a3 3 0 0 0 2.56.06l1.67-.74h3.23l1.67.74a3 3 0 0 0 2.56-.06zM246.18 27l16.37 4.91L278.93 27h-32.75zm-.63 2h.34l16.66 5 16.67-5h.33a3 3 0 1 1 0 6h-34a3 3 0 1 1 0-6zm1.35 8a6 6 0 0 0 5.65 4h20a6 6 0 0 0 5.66-4H246.9z'/%3E%3Cpath d='M159.5 21.02A9 9 0 0 0 151 15h-42a9 9 0 0 0-8.5 6.02 6 6 0 0 0 .02 11.96A8.99 8.99 0 0 0 109 45h42a9 9 0 0 0 8.48-12.02 6 6 0 0 0 .02-11.96zM151 17h-42a7 7 0 0 0-6.33 4h54.66a7 7 0 0 0-6.33-4zm-9.34 26a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-4.34a8.98 8.98 0 0 0 3.34-7h-2a7 7 0 0 1-7 7h-7a7 7 0 1 1 0-14h42a7 7 0 1 1 0 14h-9.34zM109 27a9 9 0 0 0-7.48 4H101a4 4 0 1 1 0-8h58a4 4 0 0 1 0 8h-.52a9 9 0 0 0-7.48-4h-42z'/%3E%3Cpath d='M39 115a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm6-8a6 6 0 1 1-12 0 6 6 0 0 1 12 0zm-3-29v-2h8v-6H40a4 4 0 0 0-4 4v10H22l-1.33 4-.67 2h2.19L26 130h26l3.81-40H58l-.67-2L56 84H42v-6zm-4-4v10h2V74h8v-2h-8a2 2 0 0 0-2 2zm2 12h14.56l.67 2H22.77l.67-2H40zm13.8 4H24.2l3.62 38h22.36l3.62-38z'/%3E%3Cpath d='M129 92h-6v4h-6v4h-6v14h-3l.24 2 3.76 32h36l3.76-32 .24-2h-3v-14h-6v-4h-6v-4h-8zm18 22v-12h-4v4h3v8h1zm-3 0v-6h-4v6h4zm-6 6v-16h-4v19.17c1.6-.7 2.97-1.8 4-3.17zm-6 3.8V100h-4v23.8a10.04 10.04 0 0 0 4 0zm-6-.63V104h-4v16a10.04 10.04 0 0 0 4 3.17zm-6-9.17v-6h-4v6h4zm-6 0v-8h3v-4h-4v12h1zm27-12v-4h-4v4h3v4h1v-4zm-6 0v-8h-4v4h3v4h1zm-6-4v-4h-4v8h1v-4h3zm-6 4v-4h-4v8h1v-4h3zm7 24a12 12 0 0 0 11.83-10h7.92l-3.53 30h-32.44l-3.53-30h7.92A12 12 0 0 0 130 126z'/%3E%3Cpath d='M212 86v2h-4v-2h4zm4 0h-2v2h2v-2zm-20 0v.1a5 5 0 0 0-.56 9.65l.06.25 1.12 4.48a2 2 0 0 0 1.94 1.52h.01l7.02 24.55a2 2 0 0 0 1.92 1.45h4.98a2 2 0 0 0 1.92-1.45l7.02-24.55a2 2 0 0 0 1.95-1.52L224.5 96l.06-.25a5 5 0 0 0-.56-9.65V86a14 14 0 0 0-28 0zm4 0h6v2h-9a3 3 0 1 0 0 6H223a3 3 0 1 0 0-6H220v-2h2a12 12 0 1 0-24 0h2zm-1.44 14l-1-4h24.88l-1 4h-22.88zm8.95 26l-6.86-24h18.7l-6.86 24h-4.98zM150 242a22 22 0 1 0 0-44 22 22 0 0 0 0 44zm24-22a24 24 0 1 1-48 0 24 24 0 0 1 48 0zm-28.38 17.73l2.04-.87a6 6 0 0 1 4.68 0l2.04.87a2 2 0 0 0 2.5-.82l1.14-1.9a6 6 0 0 1 3.79-2.75l2.15-.5a2 2 0 0 0 1.54-2.12l-.19-2.2a6 6 0 0 1 1.45-4.46l1.45-1.67a2 2 0 0 0 0-2.62l-1.45-1.67a6 6 0 0 1-1.45-4.46l.2-2.2a2 2 0 0 0-1.55-2.13l-2.15-.5a6 6 0 0 1-3.8-2.75l-1.13-1.9a2 2 0 0 0-2.5-.8l-2.04.86a6 6 0 0 1-4.68 0l-2.04-.87a2 2 0 0 0-2.5.82l-1.14 1.9a6 6 0 0 1-3.79 2.75l-2.15.5a2 2 0 0 0-1.54 2.12l.19 2.2a6 6 0 0 1-1.45 4.46l-1.45 1.67a2 2 0 0 0 0 2.62l1.45 1.67a6 6 0 0 1 1.45 4.46l-.2 2.2a2 2 0 0 0 1.55 2.13l2.15.5a6 6 0 0 1 3.8 2.75l1.13 1.9a2 2 0 0 0 2.5.8zm2.82.97a4 4 0 0 1 3.12 0l2.04.87a4 4 0 0 0 4.99-1.62l1.14-1.9a4 4 0 0 1 2.53-1.84l2.15-.5a4 4 0 0 0 3.09-4.24l-.2-2.2a4 4 0 0 1 .97-2.98l1.45-1.67a4 4 0 0 0 0-5.24l-1.45-1.67a4 4 0 0 1-.97-2.97l.2-2.2a4 4 0 0 0-3.09-4.25l-2.15-.5a4 4 0 0 1-2.53-1.84l-1.14-1.9a4 4 0 0 0-5-1.62l-2.03.87a4 4 0 0 1-3.12 0l-2.04-.87a4 4 0 0 0-4.99 1.62l-1.14 1.9a4 4 0 0 1-2.53 1.84l-2.15.5a4 4 0 0 0-3.09 4.24l.2 2.2a4 4 0 0 1-.97 2.98l-1.45 1.67a4 4 0 0 0 0 5.24l1.45 1.67a4 4 0 0 1 .97 2.97l-.2 2.2a4 4 0 0 0 3.09 4.25l2.15.5a4 4 0 0 1 2.53 1.84l1.14 1.9a4 4 0 0 0 5 1.62l2.03-.87zM152 207a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6 2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-11 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-6 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3-5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-8 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm3 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm0 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4 7a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5-2a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm6-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm4-3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-5-4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm-24 6a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm16 5a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm7-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm86-29a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1 246 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM275 214a29 29 0 0 0-57.97 0h57.96zM72.33 198.12c-.21-.32-.34-.7-.34-1.12v-12h-2v12a4.01 4.01 0 0 0 7.09 2.54c.57-.69.91-1.57.91-2.54v-12h-2v12a1.99 1.99 0 0 1-2 2 2 2 0 0 1-1.66-.88zM75 176c.38 0 .74-.04 1.1-.12a4 4 0 0 0 6.19 2.4A13.94 13.94 0 0 1 84 185v24a6 6 0 0 1-6 6h-3v9a5 5 0 1 1-10 0v-9h-3a6 6 0 0 1-6-6v-24a14 14 0 0 1 14-14 5 5 0 0 0 5 5zm-17 15v12a1.99 1.99 0 0 0 1.22 1.84 2 2 0 0 0 2.44-.72c.21-.32.34-.7.34-1.12v-12h2v12a3.98 3.98 0 0 1-5.35 3.77 3.98 3.98 0 0 1-.65-.3V209a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4v-24c.01-1.53-.23-2.88-.72-4.17-.43.1-.87.16-1.28.17a6 6 0 0 1-5.2-3 7 7 0 0 1-6.47-4.88A12 12 0 0 0 58 185v6zm9 24v9a3 3 0 1 0 6 0v-9h-6z'/%3E%3Cpath d='M-17 191a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm19 9a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H3a1 1 0 0 1-1-1zm-14 5a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm-25 1a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm5 4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm9 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm15 1a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm12-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2H4zm-11-14a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-19 0a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2h-2zm6 5a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zm-25 15c0-.47.01-.94.03-1.4a5 5 0 0 1-1.7-8 3.99 3.99 0 0 1 1.88-5.18 5 5 0 0 1 3.4-6.22 3 3 0 0 1 1.46-1.05 5 5 0 0 1 7.76-3.27A30.86 30.86 0 0 1-14 184c6.79 0 13.06 2.18 18.17 5.88a5 5 0 0 1 7.76 3.27 3 3 0 0 1 1.47 1.05 5 5 0 0 1 3.4 6.22 4 4 0 0 1 1.87 5.18 4.98 4.98 0 0 1-1.7 8c.02.46.03.93.03 1.4v1h-62v-1zm.83-7.17a30.9 30.9 0 0 0-.62 3.57 3 3 0 0 1-.61-4.2c.37.28.78.49 1.23.63zm1.49-4.61c-.36.87-.68 1.76-.96 2.68a2 2 0 0 1-.21-3.71c.33.4.73.75 1.17 1.03zm2.32-4.54c-.54.86-1.03 1.76-1.49 2.68a3 3 0 0 1-.07-4.67 3 3 0 0 0 1.56 1.99zm1.14-1.7c.35-.5.72-.98 1.1-1.46a1 1 0 1 0-1.1 1.45zm5.34-5.77c-1.03.86-2 1.79-2.9 2.77a3 3 0 0 0-1.11-.77 3 3 0 0 1 4-2zm42.66 2.77c-.9-.98-1.87-1.9-2.9-2.77a3 3 0 0 1 4.01 2 3 3 0 0 0-1.1.77zm1.34 1.54c.38.48.75.96 1.1 1.45a1 1 0 1 0-1.1-1.45zm3.73 5.84c-.46-.92-.95-1.82-1.5-2.68a3 3 0 0 0 1.57-1.99 3 3 0 0 1-.07 4.67zm1.8 4.53c-.29-.9-.6-1.8-.97-2.67.44-.28.84-.63 1.17-1.03a2 2 0 0 1-.2 3.7zm1.14 5.51c-.14-1.21-.35-2.4-.62-3.57.45-.14.86-.35 1.23-.63a2.99 2.99 0 0 1-.6 4.2zM15 214a29 29 0 0 0-57.97 0h57.96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    body.bg-contact::after {
+      background-color: rgba(68, 68, 68, 0.9); }
+
+main {
+  min-height: calc(100vh - 60px); }
+  main .icons {
+    margin-top: 1rem; }
+    main .icons a {
+      padding: 0.4rem; }
+      main .icons a * {
+        transition: all 0.5s ease-out; }
+      main .icons a:hover * {
+        color: #eece1a;
+        transform-origin: center;
+        transform: scale(1.2); }
+  main#home {
+    scroll-behavior: smooth;
+    overflow: scroll;
+    scroll-snap-type: y proximity;
+    height: 100vh; }
+    main#home .welcome {
+      padding: 4rem;
+      scroll-snap-align: center;
+      height: 100vh; }
+      main#home .welcome .lg-heading {
+        margin-top: 20vh; }
+    main#home .skillset {
+      display: grid;
+      padding: 10px;
+      gap: 10px;
+      transition: all 0.6s ease-in;
+      min-height: 100vh;
+      opacity: 0.3;
+      scroll-snap-align: center; }
+      main#home .skillset h1,
+      main#home .skillset h2,
+      main#home .skillset h3 {
+        color: #000; }
+      main#home .skillset img {
+        max-height: 50px;
+        max-width: 150px; }
+      main#home .skillset .grid-item {
+        font-size: 1.5rem;
+        padding: 1rem;
+        background-size: cover;
+        background-attachment: fixed; }
+        main#home .skillset .grid-item h2 {
+          font-size: 2rem;
+          color: white; }
+    main#home .this-website {
+      transition: background-color 0.6s ease-in;
+      background-color: transparent;
+      scroll-snap-align: center;
+      height: 100vh;
+      padding: 3rem; }
+  main#about, main#work, main#contact {
+    padding: 4rem; }
+  main#home .lg-heading, main#about .lg-heading, main#work .lg-heading, main#contact .lg-heading {
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: fadeIn 2s ease-out 0.3s;
+    animation-fill-mode: forwards; }
+  main#home .sm-heading, main#about .sm-heading, main#work .sm-heading, main#contact .sm-heading {
+    background-color: transparent;
+    animation: bgFadeIn 2s ease-out 1.6s;
+    animation-fill-mode: forwards; }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400; }
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
+    font-size: 6rem; }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
+    margin-bottom: 2rem;
+    background-color: rgba(71, 71, 71, 0.5);
+    padding: 0 0.5rem; }
+
+a {
+  color: #fff;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2; }
+
+.text-secondary {
+  color: #eece1a; }
+
+.about-info {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: "bio-img bio bio" "job-1 job-2 job-3";
+  grid-template-columns: repeat(3, 1fr); }
+  .about-info .bio-img {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    border: 3px solid #eece1a;
+    grid-area: bio-img; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  .about-info .job-1 {
+    grid-area: job-1; }
+  .about-info .job-2 {
+    grid-area: job-2; }
+  .about-info .job-3 {
+    grid-area: job-3; }
+  .about-info .job {
+    background-color: #515151;
+    border-bottom: 3px solid #eece1a;
+    padding: 1.5rem; }
+
+.projects {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects .item {
+    transition: all 0.5s ease-out;
+    justify-self: center;
+    max-width: 350px; }
+    .projects .item:hover {
+      transform: scale(1.1); }
+  .projects .thumbnail {
+    display: flex; }
+    .projects .thumbnail img {
+      transition: all 0.5s ease-out;
+      object-fit: cover;
+      object-position: top;
+      height: 150px;
+      width: 100%;
+      border-radius: 8px 8px 0 0; }
+      .projects .thumbnail img:hover {
+        border: 3.5px solid #eece1a;
+        object-position: bottom; }
+  .projects .btn, .projects .btn-dark, .projects .btn-light {
+    text-align: center; }
+    .projects .btn:hover, .projects .btn-dark:hover, .projects .btn-light:hover {
+      padding: 0.5rem 1.5rem;
+      font-size: 1.4rem; }
+  .projects .btn-dark {
+    border-radius: 0 0 8px 8px; }
+
+.btn, .btn-dark, .btn-light {
+  transition: all 0.5s ease-out;
+  display: block;
+  padding: 0.5rem 1rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background-color: #eece1a;
+    color: #fff; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333; }
+
+.contact-boxes {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-top: 1rem; }
+  .contact-boxes .contact-item {
+    transition: all 0.5s ease-out;
+    position: relative;
+    border: 3px solid white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    font-size: 1.7rem;
+    padding: 1.5rem 2.5rem; }
+    .contact-boxes .contact-item .tooltip {
+      position: absolute;
+      top: -50%;
+      font-size: 1rem;
+      background-color: black;
+      border: 2px solid black;
+      border-radius: 4px;
+      padding: 0 0.5rem;
+      color: white; }
+      .contact-boxes .contact-item .tooltip-fade {
+        animation: fadeOut 3s ease-out, throb 0.4s ease-in; }
+    .contact-boxes .contact-item:hover {
+      background: #eece1a;
+      color: #000;
+      cursor: pointer;
+      padding: 0.5rem 1.5rem;
+      border-color: #eece1a; }
+      .contact-boxes .contact-item:hover span {
+        color: #000; }
+
+.grid-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px; }
+  .grid-item.col-1-3 {
+    grid-column: 1 / 3; }
+  .grid-item.col-1-4 {
+    grid-column: 1 / 4; }
+  .grid-item.col-1-5 {
+    grid-column: 1 / 5; }
+  .grid-item.col-3-7 {
+    grid-column: 3 / 7; }
+
+.bg-pic--bright {
+  background: black url(../img/sunset.jpg);
+  color: #333; }
+
+.bg-pic--dark {
+  background-image: url(../img/workdesk.jpg); }
+
+.typewriter .wrap {
+  border-right: 0.1em solid #fff; }
+
+.rotate-typewriter .wrap {
+  border-right: 0.1em solid #fff; }
+
+.blinking {
+  animation: blinking 1.2s steps(44) 0s infinite normal; }
+
+#main-footer {
+  height: 60px;
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: #fff; }
+
+@media screen and (min-width: 1171px) {
+  main#work .projects {
+    grid-template-columns: repeat(4, 1fr); }
+  main#home .skillset {
+    grid-template-columns: repeat(6, 1fr); }
+  .hidden-xl {
+    display: none; } }
+
+@media screen and (max-width: 1170px) {
+  main#work .projects {
+    grid-template-columns: repeat(3, 1fr); }
+  main#home .skillset {
+    grid-template-columns: repeat(4, 1fr); }
+    main#home .skillset .grid-item {
+      font-size: 1.1rem; }
+  .hidden-lg {
+    display: none; }
+  .bg-pic--bright-lg {
+    background: black url(../img/sunset.jpg);
+    color: #333; }
+  .bg-pic--dark-lg {
+    background-image: url(../img/workdesk.jpg); } }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main#home .skillset {
+      grid-template-columns: repeat(2, 1fr); }
+    main#work .projects {
+      grid-template-columns: repeat(2, 1fr); }
+  h1.lg-heading {
+    font-size: 5rem;
+    margin-top: 10vh; }
+  .menu {
+    flex-direction: column; }
+    .menu-branding, .menu-nav-list {
+      width: 100%; }
+    .menu-branding {
+      height: 25vh;
+      transform: translate3d(-100%, 0, 0); }
+      .menu-branding .portrait {
+        width: 120px;
+        height: 120px; }
+        .menu-branding .portrait #loader {
+          width: 120px;
+          height: 120px;
+          margin: -60px 0 0 -60px; }
+          .menu-branding .portrait #loader:before {
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px; }
+          .menu-branding .portrait #loader:after {
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px; }
+      .menu-branding.show {
+        transform: translate3d(0, 0, 0); }
+    .menu-nav-list {
+      height: 75vh;
+      transform: translate3d(100%, 0, 0); }
+      .menu-nav-list .nav-item .nav-link {
+        font-size: 24px; }
+      .menu-nav-list.show {
+        transform: translate3d(0, 0, 0); }
+  .about-info {
+    grid-template-areas: "bio-img" "bio" "job-1" "job-2" "job-3";
+    grid-template-columns: 1fr; }
+  .contact-boxes .contact-item {
+    padding: 0.7rem 1.8rem;
+    margin-bottom: 1.3rem;
+    font-size: 1.2rem; } }
+
+@media screen and (max-width: 567px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main#about, main#work, main#contact {
+      padding: 2rem; }
+    main#home .lg-heading {
+      margin-top: 25vh !important; }
+    main#home .sm-heading {
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important; }
+    main#home .skillset img {
+      max-width: 130px; }
+    main#work .projects {
+      grid-template-columns: 1fr; }
+  h1.lg-heading {
+    font-size: 3.2rem;
+    margin-top: 8vh !important; }
+  .contact-boxes .contact-item {
+    padding: 0.7rem 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem; }
+    .contact-boxes .contact-item span {
+      display: none; }
+  .bg-pic--bright-sm {
+    background: black url(../img/sunset.jpg);
+    color: #333; }
+  .bg-pic--dark-sm {
+    background-image: url(../img/workdesk.jpg); } }

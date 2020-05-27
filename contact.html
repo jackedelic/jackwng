@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Contact Me</title>
+  </head>
+  <body class="bg-contact">
+    <header>
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+
+      <nav class="menu">
+        <div class="menu-branding">
+          <div class="portrait">
+            <div id="loader-wrapper">
+              <div id="loader"></div>
+            </div>
+          </div>
+        </div>
+        <ul class="menu-nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">
+              Who am I
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="work.html" class="nav-link">
+              What I do
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link current">
+              How to reach me
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contact">
+      <h1 class="lg-heading">Contact <span class="text-secondary">Me</span></h1>
+      <h2
+        class="sm-heading typewriter"
+        data-period="1000"
+        data-type='[ "Some ways you can reach me...&nbsp;"]'
+      ></h2>
+      <div class="contact-boxes">
+        <a class="contact-item" id="email-item">
+          <div id="email-tooltip" class="hidden tooltip">Copied!</div>
+          <input
+            type="text"
+            id="email-input"
+            style="transform: scale(0); position: absolute;"
+            value="jackwong3101@yahoo.com"
+          />
+          <span class="text-secondary">Email: </span>
+          jackwong3101@yahoo.com
+          <i class="fas fa-envelope fa-2x"></i>
+        </a>
+        <a class="contact-item" id="phone-item">
+          <span class="text-secondary">Phone: </span>
+          <input
+            type="text"
+            id="phone-input"
+            style="transform: scale(0); position: absolute;"
+            value="+65 81417700"
+          />
+          <div id="phone-tooltip" class="hidden tooltip">Copied!</div>
+          +65 8141 7700
+          <i class="fas fa-phone fa-2x"></i>
+        </a>
+        <a
+          class="contact-item"
+          href="https://www.linkedin.com/in/jack-wong-nus/"
+          target="_blank"
+          rel="noopener noferer"
+        >
+          <span class="text-secondary">Linkedin: </span>
+          linkedin.com/in/jack-wong-nus
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <a
+          class="contact-item"
+          href="https://www.facebook.com/profile.php?id=100000580297121"
+          target="_blank"
+          rel="noopener noferer"
+        >
+          <span class="text-secondary">Facebook: </span>
+          Jack Wong
+          <i class="fab fa-facebook-square fa-2x"></i>
+        </a>
+        <a
+          class="contact-item"
+          href="https://web.telegram.org/#/im?p=@jaackwong"
+          target="_blank"
+          rel="noopener noferer"
+        >
+          <span class="text-secondary">Telegram: </span>
+          @jaackwong
+          <i class="fab fa-telegram-plane fa-2x"></i>
+        </a>
+        <a class="contact-item" href="#" target="_blank" rel="noopener noferer">
+          <span class="text-secondary">My website: </span>
+          www.jackwng.com
+          <i class="fas fa-desktop fa-2x"></i>
+        </a>
+        <a
+          class="contact-item"
+          href="https://www.instagram.com/jaackwong/"
+          target="_blank"
+          rel="noopener noferer"
+        >
+          <span class="text-secondary">Instagram: </span>
+          @jaackwong
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+      </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/onload.js"></script>
+  </body>
+  <footer id="main-footer">
+    Copyright &copy; 2020
+  </footer>
+</html>
