@@ -17,33 +17,32 @@ self.addEventListener("install", function (event) {
 // Triggered only when the user makes subsequent network request
 self.addEventListener("fetch", (event) => {
   console.log("fetch triggered");
-  console.log("event request:");
-  console.log(event.request);
   event.respondWith(
-    // Promise of a response
-    // intercepts request on browser
-    caches.match(event.request).then((response) => {
-      if (response) {
-        console.log("cache hit");
-        return response;
-      }
-      // request not yet in cache
-      // resumes to make a network request
-      return fetch(event.request).then(function (response) {
-        // Check if we received a valid response
+    // check if we are able to fetch
+    fetch(event.request)
+      .then(function (response) {
+        // If response does not meet these conditions, we dun wan to cache. We do nothing.
         if (!response || response.status !== 200 || response.type !== "basic") {
           return response;
         }
-
         var responseToCache = response.clone();
-
         caches.open(CACHE_NAME).then(function (cache) {
           cache.put(event.request, responseToCache);
         });
-
         return response;
-      });
-    })
+      })
+      .catch((err) => {
+        // unable to fetch, so we get the resource from the cache, if possible.
+        return caches.match(event.request).then((response) => {
+          if (response) {
+            return response;
+          } else {
+            throw new Error(
+              "Unable to fetch fro server. Cache does not have the requested resource."
+            );
+          }
+        });
+      })
   );
 });
 
