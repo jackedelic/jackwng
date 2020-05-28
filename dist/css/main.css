@@ -600,7 +600,12 @@ header {
   .contact-boxes .contact-item {
     padding: 0.7rem 1.8rem;
     margin-bottom: 1.3rem;
-    font-size: 1.2rem; } }
+    font-size: 1.2rem; }
+  .bg-pic--bright-md {
+    background: black url(../img/sunset.jpg);
+    color: #333; }
+  .bg-pic--dark-md {
+    background-image: url(../img/workdesk.jpg); } }
 
 @media screen and (max-width: 567px) {
   main {
