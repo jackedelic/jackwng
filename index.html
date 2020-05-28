@@ -81,7 +81,7 @@
           </div>
         </div>
 
-        <div class="grid-item bg-pic--dark bg-pic--bright-lg bg-pic--dark-sm">
+        <div class="grid-item bg-pic--dark-lg">
           <div class="flex-col">
             <img src="img/jekyll.svg" alt="" />
             Jekyll
@@ -124,7 +124,7 @@
         </div>
         <!-- START shows when screen smaller than XL -->
         <div
-          class="grid-item bg-pic--dark bg-pic--bright-lg bg-pic--dark-sm hidden-xl"
+          class="grid-item bg-pic--dark bg-pic--bright-lg bg-pic--dark-md hidden-xl"
         >
           <div class="flex-col">
             <img src="img/html-5.svg" alt="" />
@@ -132,14 +132,14 @@
           </div>
         </div>
         <div
-          class="grid-item bg-pic--dark bg-pic--bright-lg bg-pic--dark-sm hidden-xl"
+          class="grid-item bg-pic--dark bg-pic--bright-lg bg-pic--dark-md hidden-xl"
         >
           <div class="flex-col">
             <img src="img/css-3.svg" alt="" />
             CSS3
           </div>
         </div>
-        <div class="grid-item bg-pic--dark bg-pic--bright-sm hidden-xl">
+        <div class="grid-item bg-pic--dark bg-pic--bright-md hidden-xl">
           <div class="flex-col">
             <img src="img/javascript.svg" alt="" />
             Javascript/ES6
@@ -255,16 +255,40 @@
         </div>
       </section>
       <section class="this-website">
-        <h2
-          class="sm-heading"
-          data-period="1000"
-          data-type='[ "How this website is made.&nbsp;"]'
-        ></h2>
+        <h2 class="md-heading">
+          How this site <span class="text-secondary">is made</span>
+        </h2>
+        <p>
+          This site is built with minimal bells and whistles while looking
+          spiffy and modern. I used
+          <span class="text-secondary">zero library and framework</span> for
+          this website. It is entirely built using
+          <span class="text-secondary">
+            pure HTML5 <img src="img/html-5.svg" /> CSS3
+            <img src="img/css-3.svg" /> Javascript<img
+              src="img/javascript.svg"
+            />
+          </span>
+          to ensure minimal load time without the bulk of frameworks and
+          libraries.
+        </p>
+        <p>
+          <span class="text-secondary">
+            <a
+              href="https://developers.google.com/web/ilt/pwa/introduction-to-service-worker"
+            >
+              Service worker
+            </a></span
+          >
+          is enabled to cache some of the resources fetched from the server.
+          This means this site can work offline :)
+        </p>
       </section>
     </main>
     <script src="js/main.js"></script>
     <script src="js/animation.js"></script>
     <script src="js/onload.js"></script>
     <script src="js/home.js"></script>
+    <script src="register-sw.js"></script>
   </body>
 </html>

@@ -328,7 +328,11 @@ main {
       background-color: transparent;
       scroll-snap-align: center;
       height: 100vh;
-      padding: 3rem; }
+      padding: 3rem;
+      text-align: center; }
+      main#home .this-website p img {
+        height: 30px;
+        margin-bottom: -5px; }
   main#about, main#work, main#contact {
     padding: 4rem; }
   main#home .lg-heading, main#about .lg-heading, main#work .lg-heading, main#contact .lg-heading {
@@ -356,6 +360,12 @@ h3 {
     margin-bottom: 2rem;
     background-color: rgba(71, 71, 71, 0.5);
     padding: 0 0.5rem; }
+
+p {
+  font-size: 1.3rem; }
+
+.md-heading {
+  font-size: 2.3rem; }
 
 a {
   color: #fff;
@@ -590,7 +600,12 @@ header {
   .contact-boxes .contact-item {
     padding: 0.7rem 1.8rem;
     margin-bottom: 1.3rem;
-    font-size: 1.2rem; } }
+    font-size: 1.2rem; }
+  .bg-pic--bright-md {
+    background: black url(../img/sunset.jpg);
+    color: #333; }
+  .bg-pic--dark-md {
+    background-image: url(../img/workdesk.jpg); } }
 
 @media screen and (max-width: 567px) {
   main {
