@@ -54,6 +54,7 @@ main {
       min-height: 100vh;
       opacity: 0.3;
       scroll-snap-align: start;
+      scroll-snap-stop: always;
       h1,
       h2,
       h3 {
