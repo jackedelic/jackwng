@@ -6,7 +6,7 @@ self.addEventListener("install", function (event) {
   // Fetch other pages' resources
   event.waitUntil(
     Promise.all([
-      fetch("/index.html").then((res) => console.log("Fetched about.html")),
+      fetch("/index.html").then((res) => console.log("Fetched index.html")),
       fetch("/about.html").then((res) => console.log("Fetched about.html")),
       fetch("/work.html").then((res) => console.log("Fetched work.html")),
       fetch("/contact.html").then((res) => console.log("Fetched contact.html")),
