@@ -524,7 +524,7 @@ header {
   color: #333; }
 
 .bg-pic--dark {
-  background-image: url(../img/workdesk.jpg); }
+  background-image: url(../img/fern.jpg); }
 
 .typewriter .wrap {
   border-right: 0.1em solid #fff; }
@@ -563,7 +563,8 @@ header {
     background: black url(../img/sunset.jpg);
     color: #333; }
   .bg-pic--dark-lg {
-    background-image: url(../img/workdesk.jpg); } }
+    background-image: url(../img/fern.jpg);
+    color: #e0e0e0; } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -620,7 +621,8 @@ header {
     background: black url(../img/sunset.jpg);
     color: #333; }
   .bg-pic--dark-md {
-    background-image: url(../img/workdesk.jpg); } }
+    background-image: url(../img/fern.jpg);
+    color: #e0e0e0; } }
 
 @media screen and (max-width: 567px) {
   main {
@@ -655,4 +657,5 @@ header {
     background: black url(../img/sunset.jpg);
     color: #333; }
   .bg-pic--dark-sm {
-    background-image: url(../img/workdesk.jpg); } }
+    background-image: url(../img/fern.jpg);
+    color: #e0e0e0; } }

@@ -42,7 +42,8 @@
     color: #333;
   }
   .bg-pic--dark-lg {
-    background-image: url(../img/workdesk.jpg);
+    background-image: url(../img/fern.jpg);
+    color: $bg-light;
   }
 }
 // Tablets and small laptops
@@ -134,7 +135,8 @@
     color: #333;
   }
   .bg-pic--dark-md {
-    background-image: url(../img/workdesk.jpg);
+    background-image: url(../img/fern.jpg);
+    color: $bg-light;
   }
 }
 // Smartphones
@@ -197,6 +199,7 @@
     color: #333;
   }
   .bg-pic--dark-sm {
-    background-image: url(../img/workdesk.jpg);
+    background-image: url(../img/fern.jpg);
+    color: $bg-light;
   }
 }
