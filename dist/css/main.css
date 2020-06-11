@@ -312,6 +312,18 @@ main {
       height: 100vh; }
       main#home .welcome .lg-heading {
         margin-top: 20vh; }
+      main#home .welcome .btn-download {
+        border: 1px solid white;
+        border-radius: 8px;
+        text-align: center;
+        width: 250px;
+        margin: auto;
+        margin-top: 20vh;
+        padding: 0.5rem 0; }
+        main#home .welcome .btn-download a {
+          display: block;
+          font-size: 1.1rem;
+          width: 250px; }
     main#home .skillset {
       display: grid;
       padding: 10px;
@@ -654,10 +666,17 @@ header {
     main#about, main#work, main#contact {
       padding: 2rem; }
     main#home .lg-heading {
-      margin-top: 19vh !important; }
+      margin-top: 15vh !important; }
     main#home .sm-heading {
       margin-top: 1rem !important;
-      margin-bottom: 1rem !important; }
+      margin-bottom: 1rem !important;
+      font-size: 1.2rem; }
+    main#home .welcome .btn-download {
+      margin-top: 10vh;
+      width: 200px; }
+      main#home .welcome .btn-download a {
+        font-size: 0.9rem;
+        width: 200px; }
     main#home .skillset img {
       max-width: 130px; }
     main#home .this-website p {

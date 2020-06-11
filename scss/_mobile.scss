@@ -151,11 +151,22 @@
     }
     &#home {
       .lg-heading {
-        margin-top: 19vh !important;
+        margin-top: 15vh !important;
       }
       .sm-heading {
         margin-top: 1rem !important;
         margin-bottom: 1rem !important;
+        font-size: 1.2rem;
+      }
+      .welcome {
+        .btn-download {
+          margin-top: 10vh;
+          width: 200px;
+          a {
+            font-size: 0.9rem;
+            width: 200px;
+          }
+        }
       }
       .skillset {
         img {
